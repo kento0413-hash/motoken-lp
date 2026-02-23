@@ -5,16 +5,16 @@ import styles from "./Concept.module.css";
 
 export default function Concept() {
   return (
-    <section className={styles.concept} id="concept">
+    <section className={styles.concept} id="concept" aria-label="コンセプト">
       <div className={styles.container}>
         <RevealUp className={styles.sectionLabel}>Concept</RevealUp>
         <div className={styles.conceptGrid}>
           <div className={styles.conceptText}>
             <RevealUp>
               <h2 className={styles.conceptTitle}>
-                画面の向こうに、
+                冷たい画面の向こう側に、
                 <br />
-                <em>感情</em>はあるか。
+                <em>熱狂のステージ</em>を。
               </h2>
             </RevealUp>
             <RevealUp delay={0.1}>
@@ -39,9 +39,7 @@ export default function Concept() {
               <p
                 className={`${styles.conceptDescription} ${styles.conceptHighlight}`}
               >
-                SNS社会において、人間は画面越しの世界しか
-                <br />
-                見えていない——その現象を、映像で具現化する。
+                冷たい画面の向こう側に、熱狂のステージを創る——それがMOTOKENの使命。
               </p>
             </RevealUp>
           </div>
@@ -52,16 +50,24 @@ export default function Concept() {
                   <div className={styles.tvHead}>
                     <div className={styles.tvScreen}>
                       <div className={styles.tvStatic}></div>
+                      <div className={styles.tvScanline}></div>
+                      <div className={styles.tvGlowDot}></div>
                     </div>
+                    <div className={styles.tvAntenna} aria-hidden="true"></div>
                     <div className={styles.tvBody}></div>
                   </div>
+                  <span className={styles.particle} aria-hidden="true"></span>
+                  <span className={styles.particle} aria-hidden="true"></span>
+                  <span className={styles.particle} aria-hidden="true"></span>
+                  <span className={styles.particle} aria-hidden="true"></span>
+                  <span className={styles.particle} aria-hidden="true"></span>
                 </div>
                 <div className={styles.conceptCardText}>
-                  <span className={styles.conceptCardLabel}>The Duality</span>
+                  <span className={styles.conceptCardLabel}>The Mission</span>
                   <p>
-                    AIの感情 × 人間の風刺
+                    AIの冷たさと人間の熱狂が
                     <br />
-                    二つの視点が交差する表現
+                    交差する表現
                   </p>
                 </div>
               </div>

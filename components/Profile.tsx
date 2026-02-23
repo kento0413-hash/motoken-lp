@@ -28,13 +28,13 @@ const tools = [
 
 const career = [
   { period: "2013 —", desc: "AI・デジタル新規事業（上場企業）" },
-  { period: "—", desc: "Walt Disney World 勤務" },
+  { period: "—", desc: "Walt Disney World キャスト" },
   { period: "2025.12 —", desc: "AIアーティスト「MOTOKEN」始動" },
 ];
 
 export default function Profile() {
   return (
-    <section className={styles.profile} id="profile">
+    <section className={styles.profile} id="profile" aria-label="プロフィール">
       <div className={styles.container}>
         <RevealUp className={styles.sectionLabel}>Profile</RevealUp>
         <RevealUp>
@@ -44,6 +44,11 @@ export default function Profile() {
         </RevealUp>
         <div className={styles.profileGrid}>
           <RevealUp delay={0.1} className={styles.profileMain}>
+            <div className={styles.profileAvatar} aria-hidden="true">
+              <div className={styles.avatarScreen}>
+                <span className={styles.avatarInitial}>M</span>
+              </div>
+            </div>
             <div className={styles.profileBio}>
               <p>
                 10年以上にわたりAI・デジタル領域の新規事業に従事し、現場起点で事業化を推進してきた実践者。

@@ -1,6 +1,21 @@
 .contact {
   padding: clamp(80px, 12vw, 160px) 0;
   text-align: center;
+  background: linear-gradient(180deg, #F5EDE3 0%, #F0E4D6 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 500px;
+  background: radial-gradient(ellipse at center, rgba(212, 146, 42, 0.1), transparent 70%);
+  pointer-events: none;
 }
 
 .container {
@@ -12,6 +27,42 @@
 .contactInner {
   max-width: 640px;
   margin: 0 auto;
+  background: var(--bg-card);
+  border-radius: var(--radius-xl);
+  padding: clamp(40px, 6vw, 64px) clamp(32px, 5vw, 56px);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated glow border */
+.contactInner::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: calc(var(--radius-xl) + 2px);
+  background: conic-gradient(
+    from 0deg,
+    var(--accent),
+    var(--amber),
+    var(--sage),
+    var(--lavender),
+    var(--accent)
+  );
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.6s var(--ease-out);
+  animation: glowSpin 8s linear infinite;
+}
+
+.contactInner:hover::before {
+  opacity: 0.4;
+}
+
+@keyframes glowSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 .sectionLabel {
@@ -54,7 +105,7 @@
   font-size: 0.85rem;
   font-weight: 500;
   color: var(--text-secondary);
-  background: var(--bg-card);
+  background: var(--bg-warm);
   border: 1px solid var(--border);
   border-radius: 100px;
   transition: all 0.4s var(--ease-out);
@@ -68,18 +119,30 @@
 
 .socialLink:hover {
   color: var(--text);
-  border-color: var(--text);
+  border-color: var(--amber);
   transform: translateY(-3px);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 4px 20px rgba(212, 146, 42, 0.12);
+}
+
+.socialLink:active {
+  transform: translateY(0);
 }
 
 .contactCta {
   margin-top: 12px;
 }
 
+.contactCta :global(.btn-primary):hover {
+  box-shadow: 0 8px 30px rgba(196, 85, 58, 0.3);
+}
+
 @media (max-width: 768px) {
   .contactDescription br {
     display: none;
+  }
+
+  .contactInner {
+    padding: clamp(32px, 5vw, 48px) clamp(24px, 4vw, 40px);
   }
 }
 

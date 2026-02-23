@@ -1,6 +1,15 @@
 .pillars {
   padding: clamp(80px, 12vw, 160px) 0;
   background: var(--bg-warm);
+  position: relative;
+}
+
+.pillars::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 80%, var(--warm-glow), transparent 60%);
+  pointer-events: none;
 }
 
 .container {
@@ -45,14 +54,60 @@
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: clamp(32px, 3vw, 48px);
-  transition: all 0.5s var(--ease-out);
+  transition: transform 0.5s var(--ease-out), box-shadow 0.5s var(--ease-out), border-color 0.5s var(--ease-out);
   position: relative;
+  will-change: transform;
+  overflow: hidden;
+  /* Faint dot pattern background */
+  background-image: radial-gradient(circle, rgba(26, 26, 46, 0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
 }
 
 .pillarCard:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-xl);
+}
+
+/* Animated top accent bar via ::before */
+.pillarCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s var(--ease-out);
+}
+
+.pillarCard:hover::before {
+  transform: scaleX(1);
+}
+
+/* Per-card accent colors */
+.pillarAccent::before {
+  background: var(--accent);
+}
+
+.pillarAccent:hover {
   border-color: var(--accent);
+}
+
+.pillarAmber::before {
+  background: var(--amber);
+}
+
+.pillarAmber:hover {
+  border-color: var(--amber);
+}
+
+.pillarSage::before {
+  background: var(--sage);
+}
+
+.pillarSage:hover {
+  border-color: var(--sage);
 }
 
 .pillarNumber {
@@ -103,6 +158,53 @@
   font-size: 0.9rem;
   color: var(--text-secondary);
   line-height: 1.8;
+}
+
+.pillarBullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pillarBullets li {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  padding-left: 20px;
+  position: relative;
+}
+
+.pillarBullets li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--amber);
+}
+
+/* Warm glow below card */
+.pillarCard::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 40px;
+  background: radial-gradient(ellipse at center, var(--warm-glow), transparent 70%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s var(--ease-out);
+}
+
+.pillarCard:hover::after {
+  opacity: 1;
 }
 
 @media (max-width: 1024px) {

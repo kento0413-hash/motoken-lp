@@ -30,10 +30,28 @@
   letter-spacing: 0.15em;
   color: var(--text);
   transition: opacity 0.3s;
+  position: relative;
+}
+
+.navLogo::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  right: -10px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  transition: background 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
 }
 
 .navLogo:hover {
-  opacity: 0.7;
+  opacity: 1;
+}
+
+.navLogo:hover::after {
+  background: var(--amber);
+  box-shadow: 0 0 8px rgba(212, 146, 42, 0.5);
 }
 
 .navToggle {
@@ -122,9 +140,29 @@
   color: var(--bg) !important;
 }
 
+.navOverlay {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .navToggle {
     display: flex;
+  }
+
+  .navOverlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(26, 26, 46, 0.3);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s var(--ease-smooth);
+    z-index: 999;
+  }
+
+  .navOverlay.visible {
+    opacity: 1;
+    pointer-events: auto;
   }
 
   .navLinks {
@@ -141,6 +179,7 @@
     transform: translateX(100%);
     transition: transform 0.5s var(--ease-out);
     gap: 24px;
+    z-index: 1000;
   }
 
   .navLinks.open {

@@ -33,6 +33,69 @@
   margin-top: 48px;
 }
 
+/* Profile Avatar — CSS "TV Screen" with brand initial */
+.profileAvatar {
+  width: 100px;
+  height: 100px;
+  border-radius: var(--radius-md);
+  background: #1A1A2E;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 28px;
+  position: relative;
+  overflow: hidden;
+}
+
+.profileAvatar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 3px,
+      rgba(255, 255, 255, 0.02) 3px,
+      rgba(255, 255, 255, 0.02) 6px
+    );
+  pointer-events: none;
+}
+
+.profileAvatar::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: calc(var(--radius-md) + 4px);
+  border: 2px solid rgba(196, 85, 58, 0.2);
+  animation: avatarPulse 3s ease-in-out infinite;
+}
+
+@keyframes avatarPulse {
+  0%, 100% { border-color: rgba(196, 85, 58, 0.15); transform: scale(1); }
+  50% { border-color: rgba(196, 85, 58, 0.35); transform: scale(1.02); }
+}
+
+.avatarScreen {
+  width: 72px;
+  height: 72px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatarInitial {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: var(--accent);
+  text-shadow: 0 0 16px rgba(196, 85, 58, 0.4);
+}
+
 .profileBio p {
   font-size: 1rem;
   color: var(--text-secondary);
@@ -75,8 +138,9 @@
 }
 
 .skillTag:hover {
-  border-color: var(--accent);
-  color: var(--accent);
+  border-color: var(--amber);
+  color: var(--amber);
+  background: var(--amber-light);
 }
 
 .profileInfoCard {
@@ -85,6 +149,12 @@
   border-radius: var(--radius-md);
   padding: 28px;
   margin-bottom: 20px;
+  transition: border-color 0.4s var(--ease-smooth), box-shadow 0.4s var(--ease-smooth);
+}
+
+.profileInfoCard:hover {
+  border-color: rgba(212, 146, 42, 0.2);
+  box-shadow: 0 4px 20px rgba(212, 146, 42, 0.06);
 }
 
 .profileInfoTitle {
@@ -129,7 +199,7 @@
 }
 
 .careerPeriod {
-  color: var(--accent);
+  color: var(--amber);
   font-weight: 600;
   font-size: 0.8rem;
   min-width: 80px;

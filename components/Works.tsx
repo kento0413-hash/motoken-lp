@@ -29,7 +29,7 @@ const works = [
         AI Videos
       </>
     ),
-    desc: "TikTokで12,800+フォロワーを獲得した没入映像シリーズ",
+    desc: "TikTokで15,000+フォロワーを獲得した没入映像シリーズ",
     link: "View on TikTok \u2192",
     bgClass: "workCardBg2" as const,
     large: false,
@@ -53,7 +53,7 @@ const works = [
 
 export default function Works() {
   return (
-    <section className={styles.works} id="works">
+    <section className={styles.works} id="works" aria-label="作品">
       <div className={styles.container}>
         <RevealUp className={styles.sectionLabel}>Works</RevealUp>
         <RevealUp>

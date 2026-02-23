@@ -59,22 +59,24 @@ const socialLinks = [
 
 export default function Contact() {
   return (
-    <section className={styles.contact} id="contact">
+    <section className={styles.contact} id="contact" aria-label="お問い合わせ">
       <div className={styles.container}>
         <div className={styles.contactInner}>
           <RevealUp className={styles.sectionLabel}>Contact</RevealUp>
           <RevealUp>
             <h2 className={styles.contactTitle}>
-              Let&apos;s Create
+              共に、<em>舞台</em>を
               <br />
-              <em>Together.</em>
+              創りませんか。
             </h2>
           </RevealUp>
           <RevealUp delay={0.05}>
             <p className={styles.contactDescription}>
-              AI映像制作・クリエイティブ制作のご相談、
+              共に、誰もが笑顔で夢を語れる舞台を創りませんか。
               <br />
-              ビジネス登壇・コラボレーションのお問い合わせはこちらから。
+              新しい価値の共創、エバンジェリスト代行によるビジネス登壇、AI映像制作——
+              <br />
+              あなたのプロジェクトに、心を動かす火を灯します。
             </p>
           </RevealUp>
           <RevealUp delay={0.1}>

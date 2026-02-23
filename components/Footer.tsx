@@ -8,11 +8,11 @@ export default function Footer() {
           <div className={styles.footerBrand}>
             <span className={styles.footerLogo}>MOTOKEN</span>
             <span className={styles.footerTagline}>
-              AI Artist / AI Business
+              冷たい画面の向こうに、熱狂を。
             </span>
           </div>
           <p className={styles.footerCopy}>
-            &copy; 2025 MOTOKEN. All rights reserved.
+            &copy; {new Date().getFullYear()} MOTOKEN. All rights reserved.
           </p>
         </div>
       </div>

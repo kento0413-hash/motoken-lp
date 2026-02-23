@@ -46,7 +46,7 @@ export default function Hero() {
   );
 
   return (
-    <section className={styles.hero} id="hero">
+    <section className={styles.hero} id="hero" aria-label="ヒーロー">
       <div className={styles.heroBg} ref={shapesRef}>
         <div className={`${styles.heroShape} ${styles.heroShape1}`}></div>
         <div className={`${styles.heroShape} ${styles.heroShape2}`}></div>
@@ -70,9 +70,9 @@ export default function Hero() {
         </h1>
         <RevealUp delay={0.35}>
           <p className={styles.heroDescription}>
-            AI × 創作 × 事業 ——
+            冷たい画面の向こう側に、
             <br />
-            3つの領域を横断する、新しいアーティスト像。
+            <strong>熱狂のステージ</strong>を創る。
           </p>
         </RevealUp>
         <RevealUp delay={0.45}>

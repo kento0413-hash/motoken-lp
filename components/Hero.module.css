@@ -1,6 +1,7 @@
 .hero {
   position: relative;
   min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,17 +15,51 @@
   pointer-events: none;
 }
 
+/* Perspective grid */
+.heroBg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(26, 26, 46, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26, 26, 46, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse at 50% 50%, black 10%, transparent 65%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 10%, transparent 65%);
+}
+
+/* Scattered colored dots */
+.heroBg::after {
+  content: '';
+  position: absolute;
+  inset: -20%;
+  background-image:
+    radial-gradient(circle 2px, rgba(196, 85, 58, 0.2) 100%, transparent 100%),
+    radial-gradient(circle 1.5px, rgba(212, 146, 42, 0.18) 100%, transparent 100%),
+    radial-gradient(circle 2px, rgba(155, 138, 191, 0.15) 100%, transparent 100%),
+    radial-gradient(circle 1.5px, rgba(122, 143, 110, 0.15) 100%, transparent 100%);
+  background-size: 180px 200px, 220px 160px, 200px 240px, 160px 180px;
+  background-position: 20px 30px, 80px 100px, 140px 50px, 50px 170px;
+  animation: dotDrift 30s linear infinite;
+}
+
+@keyframes dotDrift {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(60px, -40px); }
+}
+
 .heroShape {
   position: absolute;
   border-radius: 50%;
   filter: blur(80px);
   opacity: 0.4;
   animation: float 20s ease-in-out infinite;
+  will-change: transform;
 }
 
 .heroShape1 {
-  width: 500px;
-  height: 500px;
+  width: 600px;
+  height: 600px;
   background: radial-gradient(circle, rgba(196, 85, 58, 0.15), transparent 70%);
   top: -10%;
   right: -5%;
@@ -32,17 +67,17 @@
 }
 
 .heroShape2 {
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(122, 143, 110, 0.12), transparent 70%);
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(140, 160, 190, 0.12), transparent 70%);
   bottom: -5%;
   left: -5%;
   animation-delay: -7s;
 }
 
 .heroShape3 {
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
   background: radial-gradient(circle, rgba(155, 138, 191, 0.1), transparent 70%);
   top: 40%;
   left: 30%;
@@ -141,6 +176,11 @@
 }
 
 @media (max-width: 768px) {
+  .hero {
+    min-height: 100svh;
+    padding: 100px clamp(20px, 5vw, 60px) 60px;
+  }
+
   .heroTitle {
     font-size: clamp(2.2rem, 9vw, 3.5rem);
   }

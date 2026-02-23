@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useCallback } from "react";
+import { useEffect, useRef } from "react";
 import RevealUp from "./RevealUp";
 import styles from "./Stats.module.css";
 
@@ -12,14 +12,15 @@ interface StatItem {
 }
 
 const stats: StatItem[] = [
-  { target: 12, unit: "years", label: "AI事業推進" },
+  { target: 12, unit: "+ Years", label: "AI事業推進" },
   {
-    target: 12800,
+    target: 15000,
     unit: "+",
-    label: "TikTokフォロワー",
-    sublabel: "（開設2ヶ月）",
+    label: "Followers SNS",
+    sublabel: "（AI Art開始2ヶ月）",
   },
-  { target: 3, unit: "fields", label: "AI × 創作 × 事業" },
+  { target: 20, unit: " /年", label: "登壇（年平均）" },
+  { target: 100, unit: "+", label: "AI Video Art" },
 ];
 
 function animateCounter(el: HTMLElement, target: number) {
@@ -77,7 +78,7 @@ export default function Stats() {
   }, []);
 
   return (
-    <section className={styles.stats}>
+    <section className={styles.stats} aria-label="実績">
       <div className={styles.container} ref={statsRef}>
         <div className={styles.statsGrid}>
           {stats.map((stat, i) => (

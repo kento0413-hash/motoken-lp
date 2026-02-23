@@ -1,45 +1,82 @@
 .stats {
   padding: clamp(60px, 8vw, 100px) 0;
-  background: var(--bg);
+  background: #1A1A2E;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle grid texture */
+.stats::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+/* Warm radial glow */
+.stats::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 400px;
+  background: radial-gradient(ellipse at center, rgba(212, 146, 42, 0.08), transparent 70%);
+  pointer-events: none;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 clamp(20px, 5vw, 60px);
+  position: relative;
+  z-index: 1;
 }
 
 .statsGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 32px;
   text-align: center;
 }
 
 .statItem {
   padding: 40px 20px;
+  border-radius: var(--radius-md);
+  transition: transform 0.4s var(--ease-out), background 0.4s var(--ease-out);
+}
+
+.statItem:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .statNumber {
   font-size: clamp(3rem, 6vw, 4.5rem);
   font-weight: 700;
   letter-spacing: -0.03em;
-  color: var(--text);
+  color: #FFFFFF;
   display: inline;
   line-height: 1;
+  text-shadow: 0 0 30px rgba(212, 146, 42, 0.3);
 }
 
 .statUnit {
   font-size: clamp(1.2rem, 2vw, 1.5rem);
   font-weight: 300;
-  color: var(--accent);
+  color: var(--amber);
   margin-left: 4px;
 }
 
 .statLabel {
   display: block;
   font-size: 0.85rem;
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.5);
   margin-top: 12px;
   letter-spacing: 0.03em;
 }
@@ -50,15 +87,22 @@
   margin-top: 2px;
 }
 
+@media (max-width: 1024px) {
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
 @media (max-width: 768px) {
   .statsGrid {
     grid-template-columns: 1fr;
-    gap: 8px;
+    gap: 0;
   }
 
   .statItem {
     padding: 24px 20px;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .statItem:last-child {

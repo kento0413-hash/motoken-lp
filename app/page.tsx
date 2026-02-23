@@ -7,19 +7,29 @@ import Works from "@/components/Works";
 import Profile from "@/components/Profile";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
+import WarmthProvider from "@/components/WarmthProvider";
 
 export default function Home() {
   return (
-    <>
+    <WarmthProvider>
+      <a href="#main" className="skipToContent">
+        メインコンテンツへスキップ
+      </a>
       <Nav />
-      <Hero />
-      <Concept />
-      <Pillars />
-      <Stats />
-      <Works />
-      <Profile />
-      <Contact />
+      <main id="main">
+        <Hero />
+        <Concept />
+        <div className="sectionDivider" aria-hidden="true" />
+        <Pillars />
+        <Stats />
+        <div className="sectionDivider" aria-hidden="true" />
+        <Works />
+        <Profile />
+        <Contact />
+      </main>
       <Footer />
-    </>
+      <ScrollToTop />
+    </WarmthProvider>
   );
 }

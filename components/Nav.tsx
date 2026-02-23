@@ -9,23 +9,50 @@ export default function Nav() {
   const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.pageYOffset > 60);
+    let ticking = false;
 
-      const sections = document.querySelectorAll("section[id]");
-      let current = "";
-      sections.forEach((section) => {
-        const sectionTop = (section as HTMLElement).offsetTop - 120;
-        if (window.pageYOffset >= sectionTop) {
-          current = section.getAttribute("id") || "";
-        }
+    const handleScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        setScrolled(window.pageYOffset > 60);
+
+        const sections = document.querySelectorAll("section[id]");
+        let current = "";
+        sections.forEach((section) => {
+          const sectionTop = (section as HTMLElement).offsetTop - 120;
+          if (window.pageYOffset >= sectionTop) {
+            current = section.getAttribute("id") || "";
+          }
+        });
+        setActiveSection(current);
+        ticking = false;
       });
-      setActiveSection(current);
+    };
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMenuOpen(false);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("keydown", handleKeyDown);
+    };
   }, []);
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
 
   const handleNavClick = useCallback(
     (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -52,39 +79,52 @@ export default function Nav() {
   ];
 
   return (
-    <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ""}`}>
-      <div className={styles.navInner}>
-        <a
-          href="#"
-          className={styles.navLogo}
-          onClick={(e) => handleNavClick(e, "#")}
-        >
-          MOTOKEN
-        </a>
-        <button
-          className={`${styles.navToggle} ${menuOpen ? styles.active : ""}`}
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="メニュー"
-        >
-          <span></span>
-          <span></span>
-        </button>
-        <ul className={`${styles.navLinks} ${menuOpen ? styles.open : ""}`}>
-          {links.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                className={`${link.isCta ? styles.navCta : ""} ${
-                  activeSection === link.href.slice(1) ? styles.activeLink : ""
-                }`}
-                onClick={(e) => handleNavClick(e, link.href)}
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </nav>
+    <>
+      <div
+        className={`${styles.navOverlay} ${menuOpen ? styles.visible : ""}`}
+        onClick={() => setMenuOpen(false)}
+      />
+      <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ""}`}>
+        <div className={styles.navInner}>
+          <a
+            href="#"
+            className={styles.navLogo}
+            onClick={(e) => handleNavClick(e, "#")}
+          >
+            MOTOKEN
+          </a>
+          <button
+            className={`${styles.navToggle} ${menuOpen ? styles.active : ""}`}
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="メニュー"
+            aria-expanded={menuOpen}
+            aria-controls="nav-menu"
+          >
+            <span></span>
+            <span></span>
+          </button>
+          <ul
+            id="nav-menu"
+            role="menubar"
+            className={`${styles.navLinks} ${menuOpen ? styles.open : ""}`}
+          >
+            {links.map((link) => (
+              <li key={link.href} role="none">
+                <a
+                  href={link.href}
+                  role="menuitem"
+                  className={`${link.isCta ? styles.navCta : ""} ${
+                    activeSection === link.href.slice(1) ? styles.activeLink : ""
+                  }`}
+                  onClick={(e) => handleNavClick(e, link.href)}
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </nav>
+    </>
   );
 }
