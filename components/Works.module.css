@@ -1,0 +1,188 @@
+.works {
+  padding: clamp(80px, 12vw, 160px) 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 60px);
+}
+
+.sectionLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 24px;
+}
+
+.sectionTitle {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+
+.sectionSubtitle {
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  color: var(--text-secondary);
+  line-height: 1.8;
+  max-width: 600px;
+}
+
+.worksGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 24px;
+  margin-top: 56px;
+}
+
+.workCard {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  min-height: 320px;
+  transition: transform 0.5s var(--ease-out), box-shadow 0.5s var(--ease-out);
+}
+
+.workCard:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+}
+
+.workCardLarge {
+  grid-column: 1 / -1;
+  min-height: 420px;
+}
+
+.workCardLink {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  cursor: pointer;
+}
+
+.workCardBg {
+  position: absolute;
+  inset: 0;
+  transition: transform 0.7s var(--ease-out);
+}
+
+.workCard:hover .workCardBg {
+  transform: scale(1.05);
+}
+
+.workCardBg1 {
+  background:
+    linear-gradient(135deg,
+      #F0E6DC 0%,
+      #E8D5C4 20%,
+      #DCC1AB 40%,
+      #C4A68A 60%,
+      #A8876E 80%,
+      #8C6854 100%
+    );
+}
+
+.workCardBg1::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 50%, rgba(196, 85, 58, 0.15) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 30%, rgba(155, 138, 191, 0.1) 0%, transparent 50%);
+}
+
+.workCardBg2 {
+  background:
+    linear-gradient(160deg,
+      #E8E4DD 0%,
+      #D4CFC6 30%,
+      #BFB8AD 60%,
+      #A8A095 100%
+    );
+}
+
+.workCardBg3 {
+  background:
+    linear-gradient(160deg,
+      #E6E8E3 0%,
+      #D1D6CB 30%,
+      #BAC1B2 60%,
+      #A3AC9A 100%
+    );
+}
+
+.workCardContent {
+  position: relative;
+  z-index: 1;
+  padding: clamp(24px, 3vw, 40px);
+  background: linear-gradient(to top, rgba(26, 26, 46, 0.75) 0%, rgba(26, 26, 46, 0.2) 60%, transparent 100%);
+  width: 100%;
+  color: #fff;
+}
+
+.workCardTag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 100px;
+  margin-bottom: 12px;
+}
+
+.workCardTitle {
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.workCardDesc {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.workCardLinkText {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: all 0.4s var(--ease-out);
+}
+
+.workCard:hover .workCardLinkText {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (max-width: 1024px) {
+  .worksGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .workCardLarge {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .workCard {
+    min-height: 280px;
+  }
+
+  .workCardLarge {
+    min-height: 320px;
+  }
+}

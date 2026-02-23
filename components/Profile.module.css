@@ -1,0 +1,148 @@
+.profile {
+  padding: clamp(80px, 12vw, 160px) 0;
+  background: var(--bg-warm);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 60px);
+}
+
+.sectionLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 24px;
+}
+
+.sectionTitle {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+
+.profileGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: clamp(40px, 5vw, 64px);
+  margin-top: 48px;
+}
+
+.profileBio p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 2;
+  margin-bottom: 20px;
+}
+
+.profileBio p:last-child {
+  margin-bottom: 0;
+}
+
+.profileSkills {
+  margin-top: 40px;
+}
+
+.profileSkillsTitle {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.skillTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skillTag {
+  padding: 8px 16px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  transition: all 0.3s var(--ease-smooth);
+}
+
+.skillTag:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.profileInfoCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 28px;
+  margin-bottom: 20px;
+}
+
+.profileInfoTitle {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.profileTools {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.profileTools li {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  padding: 6px 14px;
+  background: var(--bg-warm);
+  border-radius: 100px;
+}
+
+.profileCareer {
+  list-style: none;
+}
+
+.profileCareer li {
+  display: flex;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.85rem;
+}
+
+.profileCareer li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.careerPeriod {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.8rem;
+  min-width: 80px;
+  flex-shrink: 0;
+}
+
+.careerDesc {
+  color: var(--text-secondary);
+}
+
+@media (max-width: 1024px) {
+  .profileGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
