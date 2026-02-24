@@ -256,7 +256,8 @@ body > main {
 
   nav,
   .heroScroll,
-  .skipToContent {
+  .skipToContent,
+  button[aria-label="ページトップへ戻る"] {
     display: none !important;
   }
 

@@ -72,8 +72,8 @@
 }
 
 @keyframes avatarPulse {
-  0%, 100% { border-color: rgba(196, 85, 58, 0.15); transform: scale(1); }
-  50% { border-color: rgba(196, 85, 58, 0.35); transform: scale(1.02); }
+  0%, 100% { border-color: rgba(196, 85, 58, 0.15); }
+  50% { border-color: rgba(196, 85, 58, 0.35); }
 }
 
 .avatarScreen {

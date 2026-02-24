@@ -10,25 +10,33 @@ export default function Hero() {
   useEffect(() => {
     if (!window.matchMedia("(min-width: 768px)").matches) return;
 
+    let rafId = 0;
     const handleMouseMove = (e: MouseEvent) => {
-      const shapes = shapesRef.current?.querySelectorAll(
-        `.${styles.heroShape}`
-      );
-      if (!shapes) return;
+      if (rafId) return;
+      rafId = requestAnimationFrame(() => {
+        const shapes = shapesRef.current?.querySelectorAll(
+          `.${styles.heroShape}`
+        );
+        if (!shapes) { rafId = 0; return; }
 
-      const x = (e.clientX / window.innerWidth - 0.5) * 2;
-      const y = (e.clientY / window.innerHeight - 0.5) * 2;
+        const x = (e.clientX / window.innerWidth - 0.5) * 2;
+        const y = (e.clientY / window.innerHeight - 0.5) * 2;
 
-      shapes.forEach((shape, i) => {
-        const speed = (i + 1) * 8;
-        (
-          shape as HTMLElement
-        ).style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+        shapes.forEach((shape, i) => {
+          const speed = (i + 1) * 8;
+          (
+            shape as HTMLElement
+          ).style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+        });
+        rafId = 0;
       });
     };
 
     window.addEventListener("mousemove", handleMouseMove, { passive: true });
-    return () => window.removeEventListener("mousemove", handleMouseMove);
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      if (rafId) cancelAnimationFrame(rafId);
+    };
   }, []);
 
   const handleClick = useCallback(
