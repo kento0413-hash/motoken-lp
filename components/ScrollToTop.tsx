@@ -13,7 +13,7 @@ export default function ScrollToTop() {
       if (ticking) return;
       ticking = true;
       requestAnimationFrame(() => {
-        setVisible(window.pageYOffset > 600);
+        setVisible(window.scrollY > 600);
         ticking = false;
       });
     };

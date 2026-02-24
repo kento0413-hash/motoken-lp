@@ -15,13 +15,13 @@ export default function Nav() {
       if (ticking) return;
       ticking = true;
       requestAnimationFrame(() => {
-        setScrolled(window.pageYOffset > 60);
+        setScrolled(window.scrollY > 60);
 
         const sections = document.querySelectorAll("section[id]");
         let current = "";
         sections.forEach((section) => {
           const sectionTop = (section as HTMLElement).offsetTop - 120;
-          if (window.pageYOffset >= sectionTop) {
+          if (window.scrollY >= sectionTop) {
             current = section.getAttribute("id") || "";
           }
         });
@@ -62,7 +62,7 @@ export default function Nav() {
         e.preventDefault();
         const offset = 80;
         const top =
-          targetEl.getBoundingClientRect().top + window.pageYOffset - offset;
+          targetEl.getBoundingClientRect().top + window.scrollY - offset;
         window.scrollTo({ top, behavior: "smooth" });
       }
       setMenuOpen(false);
