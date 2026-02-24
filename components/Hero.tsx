@@ -83,6 +83,9 @@ export default function Hero() {
               onClick={(e) => handleClick(e, "#works")}
             >
               View Works
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="16" height="16" aria-hidden="true">
+                <path d="M10 4v12M4 10l6 6 6-6" />
+              </svg>
             </a>
             <a
               href="#contact"

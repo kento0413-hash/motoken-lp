@@ -176,6 +176,15 @@
   color: var(--accent);
   font-weight: 500;
   margin-bottom: 16px;
+  transition: color 0.4s var(--ease-smooth);
+}
+
+.pillarAmber .pillarSubtitle {
+  color: var(--amber);
+}
+
+.pillarSage .pillarSubtitle {
+  color: var(--sage);
 }
 
 .pillarText {

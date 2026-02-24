@@ -54,6 +54,7 @@
 .statItem:hover {
   transform: scale(1.05);
   background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 30px rgba(212, 146, 42, 0.08);
 }
 
 .statNumber {
