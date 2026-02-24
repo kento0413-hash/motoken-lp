@@ -134,10 +134,34 @@
   background: rgba(196, 85, 58, 0.12);
 }
 
+.pillarAmber .pillarIconWrap {
+  background: var(--amber-light);
+}
+
+.pillarAmber:hover .pillarIconWrap {
+  background: rgba(212, 146, 42, 0.12);
+}
+
+.pillarSage .pillarIconWrap {
+  background: var(--sage-light);
+}
+
+.pillarSage:hover .pillarIconWrap {
+  background: rgba(122, 143, 110, 0.12);
+}
+
 .pillarIconWrap svg {
   width: 28px;
   height: 28px;
   color: var(--accent);
+}
+
+.pillarAmber .pillarIconWrap svg {
+  color: var(--amber);
+}
+
+.pillarSage .pillarIconWrap svg {
+  color: var(--sage);
 }
 
 .pillarTitle {
