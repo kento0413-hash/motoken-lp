@@ -16,6 +16,18 @@ export default function NotFound() {
     >
       <p
         style={{
+          fontSize: "1rem",
+          fontWeight: 700,
+          letterSpacing: "0.15em",
+          color: "var(--text)",
+          marginBottom: "32px",
+          opacity: 0.4,
+        }}
+      >
+        MOTOKEN
+      </p>
+      <p
+        style={{
           fontSize: "0.75rem",
           fontWeight: 600,
           letterSpacing: "0.2em",

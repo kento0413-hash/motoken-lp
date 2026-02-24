@@ -53,9 +53,14 @@ export default function Error({
       >
         申し訳ございません。問題が発生しました。再度お試しください。
       </p>
-      <button onClick={reset} className="btn btn-primary">
-        もう一度試す
-      </button>
+      <div style={{ display: "flex", gap: "16px", flexWrap: "wrap", justifyContent: "center" }}>
+        <button onClick={reset} className="btn btn-primary">
+          もう一度試す
+        </button>
+        <a href="/" className="btn btn-outline">
+          トップページへ戻る
+        </a>
+      </div>
     </div>
   );
 }
