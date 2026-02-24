@@ -47,7 +47,7 @@ export default function Hero() {
 
   return (
     <section className={styles.hero} id="hero" aria-label="ヒーロー">
-      <div className={styles.heroBg} ref={shapesRef}>
+      <div className={styles.heroBg} ref={shapesRef} aria-hidden="true">
         <div className={`${styles.heroShape} ${styles.heroShape1}`}></div>
         <div className={`${styles.heroShape} ${styles.heroShape2}`}></div>
         <div className={`${styles.heroShape} ${styles.heroShape3}`}></div>

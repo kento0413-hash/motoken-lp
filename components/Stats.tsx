@@ -82,15 +82,21 @@ export default function Stats() {
       <div className={styles.container} ref={statsRef}>
         <div className={styles.statsGrid}>
           {stats.map((stat, i) => (
-            <RevealUp key={i} delay={i * 0.1} className={styles.statItem}>
+            <RevealUp
+              key={i}
+              delay={i * 0.1}
+              className={styles.statItem}
+              aria-label={`${stat.label}: ${stat.target.toLocaleString()}${stat.unit}`}
+            >
               <span
                 className={styles.statNumber}
                 data-target={stat.target}
+                aria-hidden="true"
               >
                 0
               </span>
-              <span className={styles.statUnit}>{stat.unit}</span>
-              <span className={styles.statLabel}>
+              <span className={styles.statUnit} aria-hidden="true">{stat.unit}</span>
+              <span className={styles.statLabel} aria-hidden="true">
                 {stat.label}
                 {stat.sublabel && <small>{stat.sublabel}</small>}
               </span>

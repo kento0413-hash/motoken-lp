@@ -7,6 +7,7 @@ interface RevealUpProps {
   delay?: number;
   className?: string;
   as?: string;
+  "aria-label"?: string;
 }
 
 export default function RevealUp({
@@ -14,6 +15,7 @@ export default function RevealUp({
   delay = 0,
   className = "",
   as = "div",
+  "aria-label": ariaLabel,
 }: RevealUpProps) {
   const ref = useRef<HTMLElement>(null);
 
@@ -43,6 +45,7 @@ export default function RevealUp({
       ref,
       className: `revealUp ${className}`,
       style: { "--delay": `${delay}s` } as React.CSSProperties,
+      ...(ariaLabel ? { "aria-label": ariaLabel } : {}),
     },
     children
   );
