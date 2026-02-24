@@ -179,6 +179,12 @@
   padding: 6px 14px;
   background: var(--bg-warm);
   border-radius: 100px;
+  transition: all 0.3s var(--ease-smooth);
+}
+
+.profileTools li:hover {
+  background: var(--sage-light);
+  color: var(--sage);
 }
 
 .profileCareer {

@@ -57,7 +57,7 @@
 }
 
 .contactInner:hover::before {
-  opacity: 0.4;
+  opacity: 0.5;
 }
 
 @keyframes glowSpin {

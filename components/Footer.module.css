@@ -60,10 +60,26 @@
   font-size: 0.8rem;
   color: var(--text-muted);
   transition: color 0.3s;
+  position: relative;
+}
+
+.footerLink::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  transition: width 0.3s var(--ease-out);
 }
 
 .footerLink:hover {
   color: var(--text);
+}
+
+.footerLink:hover::after {
+  width: 100%;
 }
 
 .footerCopy {

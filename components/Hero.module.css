@@ -167,6 +167,11 @@
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--text-muted);
+  transition: color 0.3s;
+}
+
+.heroScroll:hover span {
+  color: var(--text-secondary);
 }
 
 .heroScrollLine {
