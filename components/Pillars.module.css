@@ -218,7 +218,15 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
+  background: var(--accent);
+}
+
+.pillarAmber .pillarBullets li::before {
   background: var(--amber);
+}
+
+.pillarSage .pillarBullets li::before {
+  background: var(--sage);
 }
 
 /* Warm glow below card */

@@ -44,7 +44,7 @@ export default function Concept() {
               </p>
             </RevealUp>
           </div>
-          <RevealUp delay={0.15} className={styles.conceptVisual}>
+          <RevealUp delay={0.15}>
             <div className={styles.conceptCard}>
               <div className={styles.conceptCardInner}>
                 <div className={styles.conceptImageWrap}>
