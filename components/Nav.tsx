@@ -1,12 +1,14 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import styles from "./Nav.module.css";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const menuRef = useRef<HTMLUListElement>(null);
+  const toggleRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     let ticking = false;
@@ -42,10 +44,40 @@ export default function Nav() {
     };
   }, []);
 
-  // Lock body scroll when mobile menu is open
+  // Lock body scroll & focus trap when mobile menu is open
   useEffect(() => {
     if (menuOpen) {
       document.body.style.overflow = "hidden";
+      // Focus trap for mobile menu
+      const menu = menuRef.current;
+      const toggle = toggleRef.current;
+      if (!menu || !toggle) return;
+
+      const focusableEls = menu.querySelectorAll<HTMLElement>("a, button");
+      const firstFocusable = focusableEls[0];
+      const lastFocusable = focusableEls[focusableEls.length - 1];
+
+      const trapFocus = (e: KeyboardEvent) => {
+        if (e.key !== "Tab") return;
+        if (e.shiftKey) {
+          if (document.activeElement === firstFocusable || document.activeElement === toggle) {
+            e.preventDefault();
+            lastFocusable?.focus();
+          }
+        } else {
+          if (document.activeElement === lastFocusable) {
+            e.preventDefault();
+            toggle.focus();
+          }
+        }
+      };
+
+      firstFocusable?.focus();
+      document.addEventListener("keydown", trapFocus);
+      return () => {
+        document.body.style.overflow = "";
+        document.removeEventListener("keydown", trapFocus);
+      };
     } else {
       document.body.style.overflow = "";
     }
@@ -94,6 +126,7 @@ export default function Nav() {
             MOTOKEN
           </a>
           <button
+            ref={toggleRef}
             className={`${styles.navToggle} ${menuOpen ? styles.active : ""}`}
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="メニュー"
@@ -104,15 +137,14 @@ export default function Nav() {
             <span></span>
           </button>
           <ul
+            ref={menuRef}
             id="nav-menu"
-            role="menubar"
             className={`${styles.navLinks} ${menuOpen ? styles.open : ""}`}
           >
             {links.map((link) => (
-              <li key={link.href} role="none">
+              <li key={link.href}>
                 <a
                   href={link.href}
-                  role="menuitem"
                   className={`${link.isCta ? styles.navCta : ""} ${
                     activeSection === link.href.slice(1) ? styles.activeLink : ""
                   }`}
