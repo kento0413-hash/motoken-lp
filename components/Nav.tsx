@@ -12,6 +12,7 @@ export default function Nav() {
 
   useEffect(() => {
     let ticking = false;
+    const sections = document.querySelectorAll("section[id]");
 
     const handleScroll = () => {
       if (ticking) return;
@@ -19,7 +20,6 @@ export default function Nav() {
       requestAnimationFrame(() => {
         setScrolled(window.scrollY > 60);
 
-        const sections = document.querySelectorAll("section[id]");
         let current = "";
         sections.forEach((section) => {
           const sectionTop = (section as HTMLElement).offsetTop - 120;

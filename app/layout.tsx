@@ -21,7 +21,7 @@ const notoSansJP = Noto_Sans_JP({
 const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
   weight: ["400", "600"],
-  style: ["normal", "italic"],
+  style: ["italic"],
   variable: "--font-playfair",
   display: "swap",
 });

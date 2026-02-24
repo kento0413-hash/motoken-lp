@@ -76,7 +76,6 @@ body::after {
   opacity: var(--scroll-warmth);
   pointer-events: none;
   z-index: 0;
-  transition: opacity 0.3s ease-out;
 }
 
 ::selection {

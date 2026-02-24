@@ -56,7 +56,6 @@
   padding: clamp(32px, 3vw, 48px);
   transition: transform 0.5s var(--ease-out), box-shadow 0.5s var(--ease-out), border-color 0.5s var(--ease-out);
   position: relative;
-  will-change: transform;
   overflow: hidden;
   contain: layout style;
   /* Faint dot pattern background */
