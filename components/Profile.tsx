@@ -28,7 +28,7 @@ const tools = [
 
 const career = [
   { period: "2013 —", desc: "AI・デジタル新規事業（上場企業）" },
-  { period: "—", desc: "Walt Disney World キャスト" },
+  { period: "", desc: "Walt Disney World キャスト" },
   { period: "2025.12 —", desc: "AIアーティスト「MOTOKEN」始動" },
 ];
 
@@ -88,7 +88,9 @@ export default function Profile() {
               <ul className={styles.profileCareer}>
                 {career.map((item, i) => (
                   <li key={i}>
-                    <span className={styles.careerPeriod}>{item.period}</span>
+                    {item.period && (
+                      <span className={styles.careerPeriod}>{item.period}</span>
+                    )}
                     <span className={styles.careerDesc}>{item.desc}</span>
                   </li>
                 ))}
