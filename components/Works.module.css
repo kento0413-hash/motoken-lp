@@ -55,7 +55,7 @@
 }
 
 .workCard:active {
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(0.99);
 }
 
 .workCardLink:focus-visible {

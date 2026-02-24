@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 export default function Error({
   reset,
 }: {
@@ -57,9 +59,9 @@ export default function Error({
         <button onClick={reset} className="btn btn-primary">
           もう一度試す
         </button>
-        <a href="/" className="btn btn-outline">
+        <Link href="/" className="btn btn-outline">
           トップページへ戻る
-        </a>
+        </Link>
       </div>
     </div>
   );
