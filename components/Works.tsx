@@ -84,7 +84,8 @@ export default function Works() {
               >
                 <div
                   className={`${styles.workCardBg} ${styles[work.bgClass]}`}
-                ></div>
+                  aria-hidden="true"
+                />
                 <div className={styles.workCardContent}>
                   <span className={styles.workCardTag}>{work.tag}</span>
                   <h3 className={styles.workCardTitle}>{work.title}</h3>

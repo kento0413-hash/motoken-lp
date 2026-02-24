@@ -155,13 +155,17 @@
   bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.heroScrollLink {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 12px;
+  cursor: pointer;
 }
 
-.heroScroll span {
+.heroScrollLink span {
   font-size: 0.7rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -169,7 +173,7 @@
   transition: color 0.3s;
 }
 
-.heroScroll:hover span {
+.heroScrollLink:hover span {
   color: var(--text-secondary);
 }
 

@@ -263,4 +263,9 @@
     grid-column: auto;
     max-width: none;
   }
+
+  .pillarCard:hover {
+    transform: none;
+    box-shadow: none;
+  }
 }

@@ -109,4 +109,10 @@
   .statItem:last-child {
     border-bottom: none;
   }
+
+  .statItem:hover {
+    transform: none;
+    background: transparent;
+    box-shadow: none;
+  }
 }

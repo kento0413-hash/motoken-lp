@@ -105,9 +105,16 @@ export default function Hero() {
           </div>
         </RevealUp>
       </div>
-      <RevealUp delay={0.6} className={styles.heroScroll}>
-        <span>Scroll</span>
-        <div className={styles.heroScrollLine}></div>
+      <RevealUp delay={0.6} as="div" className={styles.heroScroll}>
+        <a
+          href="#concept"
+          onClick={(e) => handleClick(e, "#concept")}
+          className={styles.heroScrollLink}
+          aria-label="コンセプトセクションへスクロール"
+        >
+          <span>Scroll</span>
+          <div className={styles.heroScrollLine}></div>
+        </a>
       </RevealUp>
     </section>
   );

@@ -82,6 +82,10 @@
   width: 100%;
 }
 
+.footerLink:active {
+  opacity: 0.7;
+}
+
 .footerCopy {
   font-size: 0.75rem;
   color: var(--text-muted);
