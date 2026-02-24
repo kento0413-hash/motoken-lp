@@ -46,6 +46,7 @@
   overflow: hidden;
   min-height: 320px;
   transition: transform 0.5s var(--ease-out), box-shadow 0.5s var(--ease-out);
+  contain: layout style;
 }
 
 .workCard:hover {
