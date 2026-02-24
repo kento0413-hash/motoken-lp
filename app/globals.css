@@ -64,6 +64,7 @@ body {
   line-height: 1.7;
   overflow-x: hidden;
   position: relative;
+  min-width: 320px;
 }
 
 /* Color Script: warm tint overlay that increases with scroll progress */

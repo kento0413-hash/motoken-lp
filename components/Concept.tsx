@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import RevealUp from "./RevealUp";
 import styles from "./Concept.module.css";
 
@@ -46,16 +47,21 @@ export default function Concept() {
           <RevealUp delay={0.15} className={styles.conceptVisual}>
             <div className={styles.conceptCard}>
               <div className={styles.conceptCardInner}>
-                <div className={styles.conceptIcon}>
-                  <div className={styles.tvHead}>
-                    <div className={styles.tvScreen}>
-                      <div className={styles.tvStatic}></div>
-                      <div className={styles.tvScanline}></div>
-                      <div className={styles.tvGlowDot}></div>
-                    </div>
-                    <div className={styles.tvAntenna} aria-hidden="true"></div>
-                    <div className={styles.tvBody}></div>
-                  </div>
+                <div className={styles.conceptImageWrap}>
+                  <Image
+                    src="/concept-tvhead.png"
+                    alt="テレビ頭のキャラクターが雨の中でギターを弾く、MOTOKENのコンセプトアート"
+                    width={1024}
+                    height={1024}
+                    className={styles.conceptImage}
+                    sizes="(max-width: 768px) 240px, 280px"
+                    placeholder="blur"
+                    blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjgwIiBoZWlnaHQ9IjI4MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMUExQTJFIi8+PC9zdmc+"
+                  />
+                  <div
+                    className={styles.conceptImageOverlay}
+                    aria-hidden="true"
+                  />
                   <span className={styles.particle} aria-hidden="true"></span>
                   <span className={styles.particle} aria-hidden="true"></span>
                   <span className={styles.particle} aria-hidden="true"></span>
