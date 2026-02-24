@@ -88,6 +88,7 @@ export default function Contact() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.socialLink}
+                  aria-label={`${link.label}（新しいタブで開く）`}
                 >
                   {link.icon}
                   <span>{link.label}</span>
@@ -102,6 +103,7 @@ export default function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-primary btn-large"
+                aria-label="お問い合わせ・ご相談（新しいタブで開く）"
               >
                 お問い合わせ・ご相談
                 <svg

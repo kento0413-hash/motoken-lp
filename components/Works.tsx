@@ -80,6 +80,7 @@ export default function Works() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.workCardLink}
+                aria-label={`${work.tag}: ${work.desc}（新しいタブで開く）`}
               >
                 <div
                   className={`${styles.workCardBg} ${styles[work.bgClass]}`}

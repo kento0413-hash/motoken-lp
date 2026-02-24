@@ -78,7 +78,7 @@ export default function Stats() {
   }, []);
 
   return (
-    <section className={styles.stats} aria-label="実績">
+    <section className={styles.stats} id="stats" aria-label="実績">
       <div className={styles.container} ref={statsRef}>
         <div className={styles.statsGrid}>
           {stats.map((stat, i) => (
