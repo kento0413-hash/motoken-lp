@@ -104,6 +104,21 @@ export default function Contact() {
                 className="btn btn-primary btn-large"
               >
                 お問い合わせ・ご相談
+                <svg
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  width="16"
+                  height="16"
+                  aria-hidden="true"
+                >
+                  <path d="M11 3h6v6" />
+                  <path d="M17 3L9 11" />
+                  <path d="M14 11v6H3V6h6" />
+                </svg>
               </a>
             </div>
           </RevealUp>
