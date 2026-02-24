@@ -236,6 +236,11 @@
   .workCardLarge {
     grid-column: auto;
   }
+
+  .workCardLinkText {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @media (max-width: 768px) {
@@ -245,10 +250,5 @@
 
   .workCardLarge {
     min-height: 320px;
-  }
-
-  .workCardLinkText {
-    opacity: 1;
-    transform: translateX(0);
   }
 }
