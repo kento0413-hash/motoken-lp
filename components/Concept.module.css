@@ -209,12 +209,13 @@
     grid-template-columns: 1fr;
     gap: 48px;
   }
-}
 
-@media (max-width: 768px) {
   .conceptDescription br {
     display: none;
   }
+}
+
+@media (max-width: 768px) {
 
   .conceptImageWrap {
     width: 240px;
