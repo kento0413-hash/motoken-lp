@@ -17,22 +17,31 @@ export default function Loading() {
           fontWeight: 700,
           letterSpacing: "0.15em",
           color: "var(--text, #1A1A2E)",
-          opacity: 0.6,
+          animation: "brandPulse 2s ease-in-out infinite",
         }}
       >
         MOTOKEN
       </div>
       <div
         style={{
-          width: "28px",
-          height: "28px",
-          border: "2px solid rgba(26, 26, 46, 0.08)",
-          borderTopColor: "var(--accent, #C4553A)",
-          borderRadius: "50%",
-          animation: "spin 0.8s linear infinite",
+          width: "40px",
+          height: "2px",
+          borderRadius: "1px",
+          background: "var(--accent, #C4553A)",
+          animation: "loadBar 1.2s ease-in-out infinite",
+          transformOrigin: "center",
         }}
       />
-      <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
+      <style>{`
+        @keyframes brandPulse {
+          0%, 100% { opacity: 0.4; }
+          50% { opacity: 1; }
+        }
+        @keyframes loadBar {
+          0%, 100% { transform: scaleX(0.3); opacity: 0.4; }
+          50% { transform: scaleX(1); opacity: 1; }
+        }
+      `}</style>
     </div>
   );
 }

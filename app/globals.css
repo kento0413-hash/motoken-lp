@@ -243,3 +243,31 @@ body > main {
     scroll-behavior: auto;
   }
 }
+
+/* --- Print Styles --- */
+@media print {
+  body::after,
+  .sectionDivider,
+  .revealUp {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+
+  nav,
+  .heroScroll,
+  .skipToContent {
+    display: none !important;
+  }
+
+  * {
+    animation: none !important;
+    transition: none !important;
+    box-shadow: none !important;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+  }
+}

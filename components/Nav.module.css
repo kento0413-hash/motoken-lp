@@ -128,10 +128,12 @@
 
 .activeLink {
   color: var(--text) !important;
+  transition: color 0.3s var(--ease-smooth);
 }
 
 .activeLink::after {
   width: 100% !important;
+  transition: width 0.4s var(--ease-out);
 }
 
 .navCta {

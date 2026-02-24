@@ -26,6 +26,9 @@ const stats: StatItem[] = [
 function animateCounter(el: HTMLElement, target: number) {
   const duration = 1800;
   const start = performance.now();
+  // Pre-compute formatted strings to avoid toLocaleString() per frame
+  const cache = new Map<number, string>();
+  let lastValue = -1;
 
   function update(now: number) {
     const elapsed = now - start;
@@ -33,7 +36,15 @@ function animateCounter(el: HTMLElement, target: number) {
     const eased = 1 - Math.pow(1 - progress, 3);
     const current = Math.round(eased * target);
 
-    el.textContent = current.toLocaleString();
+    if (current !== lastValue) {
+      lastValue = current;
+      let formatted = cache.get(current);
+      if (!formatted) {
+        formatted = current.toLocaleString();
+        cache.set(current, formatted);
+      }
+      el.textContent = formatted;
+    }
 
     if (progress < 1) {
       requestAnimationFrame(update);

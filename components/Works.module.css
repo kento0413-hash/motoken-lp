@@ -113,12 +113,6 @@
     radial-gradient(ellipse at 25% 40%, rgba(196, 85, 58, 0.25) 0%, transparent 55%),
     radial-gradient(ellipse at 75% 60%, rgba(155, 138, 191, 0.18) 0%, transparent 50%);
   mix-blend-mode: screen;
-  animation: glowDrift1 12s ease-in-out infinite;
-}
-
-@keyframes glowDrift1 {
-  0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(15px, -10px); }
 }
 
 /* Card 2: Immersive — Dark base + diagonal scan-lines + amber/sage glow */
@@ -147,12 +141,6 @@
     radial-gradient(ellipse at 30% 50%, rgba(212, 146, 42, 0.22) 0%, transparent 55%),
     radial-gradient(ellipse at 80% 30%, rgba(122, 143, 110, 0.18) 0%, transparent 50%);
   mix-blend-mode: screen;
-  animation: glowDrift2 14s ease-in-out infinite;
-}
-
-@keyframes glowDrift2 {
-  0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(-12px, 8px); }
 }
 
 /* Card 3: Surreal — Dark base + dot-matrix + lavender/sage glow */
@@ -178,12 +166,6 @@
     radial-gradient(ellipse at 60% 40%, rgba(155, 138, 191, 0.22) 0%, transparent 55%),
     radial-gradient(ellipse at 20% 70%, rgba(122, 143, 110, 0.16) 0%, transparent 50%);
   mix-blend-mode: screen;
-  animation: glowDrift3 16s ease-in-out infinite;
-}
-
-@keyframes glowDrift3 {
-  0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(10px, 12px); }
 }
 
 .workCardContent {
