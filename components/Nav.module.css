@@ -22,6 +22,11 @@
   align-items: center;
   justify-content: space-between;
   height: 72px;
+  transition: height 0.4s var(--ease-smooth);
+}
+
+.scrolled .navInner {
+  height: 60px;
 }
 
 .navLogo {
