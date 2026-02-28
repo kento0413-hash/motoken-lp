@@ -38,7 +38,7 @@
   width: 120px;
   height: 120px;
   border-radius: var(--radius-md);
-  background: #1A1A2E;
+  background: #0A1410;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -67,13 +67,13 @@
   position: absolute;
   inset: -4px;
   border-radius: calc(var(--radius-md) + 4px);
-  border: 2px solid rgba(196, 85, 58, 0.2);
+  border: 2px solid rgba(224, 90, 109, 0.2);
   animation: avatarPulse 3s ease-in-out infinite;
 }
 
 @keyframes avatarPulse {
-  0%, 100% { border-color: rgba(196, 85, 58, 0.15); }
-  50% { border-color: rgba(196, 85, 58, 0.35); }
+  0%, 100% { border-color: rgba(224, 90, 109, 0.15); }
+  50% { border-color: rgba(224, 90, 109, 0.35); }
 }
 
 .avatarScreen {
@@ -93,7 +93,7 @@
   font-size: 2.2rem;
   font-weight: 400;
   color: var(--accent);
-  text-shadow: 0 0 16px rgba(196, 85, 58, 0.4);
+  text-shadow: 0 0 16px rgba(224, 90, 109, 0.4);
 }
 
 .profileBio p {
@@ -153,8 +153,8 @@
 }
 
 .profileInfoCard:hover {
-  border-color: rgba(212, 146, 42, 0.2);
-  box-shadow: 0 4px 20px rgba(212, 146, 42, 0.06);
+  border-color: rgba(91, 138, 114, 0.2);
+  box-shadow: 0 4px 20px rgba(91, 138, 114, 0.06);
 }
 
 .profileInfoTitle {

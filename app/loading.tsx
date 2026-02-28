@@ -8,7 +8,7 @@ export default function Loading() {
         alignItems: "center",
         justifyContent: "center",
         gap: "24px",
-        background: "var(--bg, #FAF9F6)",
+        background: "var(--bg, #0F1A17)",
       }}
     >
       <div
@@ -16,7 +16,7 @@ export default function Loading() {
           fontSize: "1.1rem",
           fontWeight: 700,
           letterSpacing: "0.15em",
-          color: "var(--text, #1A1A2E)",
+          color: "var(--text, #E8E2D8)",
           animation: "brandPulse 2s ease-in-out infinite",
         }}
       >
@@ -27,7 +27,7 @@ export default function Loading() {
           width: "40px",
           height: "2px",
           borderRadius: "1px",
-          background: "var(--accent, #C4553A)",
+          background: "var(--accent, #E05A6D)",
           animation: "loadBar 1.2s ease-in-out infinite",
           transformOrigin: "center",
         }}

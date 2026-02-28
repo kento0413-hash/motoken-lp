@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useCallback } from "react";
+import Image from "next/image";
 import RevealUp from "./RevealUp";
 import styles from "./Hero.module.css";
 
@@ -55,6 +56,17 @@ export default function Hero() {
 
   return (
     <section className={styles.hero} id="hero" aria-label="ヒーロー">
+      <div className={styles.heroBgImage} aria-hidden="true">
+        <Image
+          src="/hero-bg.png"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className={styles.heroBgImg}
+        />
+        <div className={styles.heroBgOverlay} />
+      </div>
       <div className={styles.heroBg} ref={shapesRef} aria-hidden="true">
         <div className={`${styles.heroShape} ${styles.heroShape1}`}></div>
         <div className={`${styles.heroShape} ${styles.heroShape2}`}></div>
@@ -66,23 +78,16 @@ export default function Hero() {
         </RevealUp>
         <h1 className={styles.heroTitle}>
           <RevealUp as="span" delay={0.1} className={styles.heroTitleLine}>
-            Where AI Meets
+            AI × 感性の共鳴——
           </RevealUp>
           <RevealUp
             as="span"
             delay={0.2}
             className={`${styles.heroTitleLine} ${styles.heroTitleAccent}`}
           >
-            Human Emotion
+            画面の向こうに<em>&ldquo;熱狂&rdquo;</em>を創る
           </RevealUp>
         </h1>
-        <RevealUp delay={0.35}>
-          <p className={styles.heroDescription}>
-            冷たい画面の向こう側に、
-            <br />
-            <strong>熱狂のステージ</strong>を創る。
-          </p>
-        </RevealUp>
         <RevealUp delay={0.45}>
           <div className={styles.heroActions}>
             <a

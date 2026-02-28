@@ -61,6 +61,27 @@
   z-index: -1;
 }
 
+.conceptCurtainRise {
+  padding: 20px 24px;
+  background: var(--accent-light);
+  border-left: 4px solid var(--accent);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  color: var(--text);
+  font-weight: 500;
+  font-size: 0.95rem;
+  line-height: 1.9;
+  position: relative;
+}
+
+.conceptCurtainRise::after {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  background: radial-gradient(ellipse at center, rgba(224, 90, 109, 0.06), transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+}
+
 .conceptCard {
   background: var(--bg-card);
   border-radius: var(--radius-lg);
@@ -75,7 +96,7 @@
 .conceptCard:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-xl);
-  border-color: rgba(212, 146, 42, 0.2);
+  border-color: rgba(91, 138, 114, 0.25);
 }
 
 .conceptCard::before {
@@ -108,8 +129,8 @@
 }
 
 @keyframes tvWarmPulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(212, 146, 42, 0); }
-  50% { box-shadow: 0 0 24px 6px rgba(212, 146, 42, 0.15); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(91, 138, 114, 0); }
+  50% { box-shadow: 0 0 24px 6px rgba(91, 138, 114, 0.2); }
 }
 
 .conceptImage {

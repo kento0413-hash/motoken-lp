@@ -1,6 +1,6 @@
 .stats {
   padding: clamp(60px, 8vw, 100px) 0;
-  background: #1A1A2E;
+  background: #0A1410;
   position: relative;
   overflow: hidden;
 }
@@ -26,7 +26,7 @@
   transform: translate(-50%, -50%);
   width: 800px;
   height: 400px;
-  background: radial-gradient(ellipse at center, rgba(212, 146, 42, 0.08), transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(224, 90, 109, 0.06), transparent 70%);
   pointer-events: none;
 }
 
@@ -54,7 +54,7 @@
 .statItem:hover {
   transform: scale(1.05);
   background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 0 30px rgba(212, 146, 42, 0.08);
+  box-shadow: 0 0 30px rgba(224, 90, 109, 0.08);
 }
 
 .statNumber {
@@ -64,7 +64,7 @@
   color: #FFFFFF;
   display: inline;
   line-height: 1;
-  text-shadow: 0 0 40px rgba(212, 146, 42, 0.15);
+  text-shadow: 0 0 40px rgba(224, 90, 109, 0.15);
 }
 
 .statUnit {

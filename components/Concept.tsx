@@ -43,16 +43,23 @@ export default function Concept() {
                 冷たい画面の向こう側に、熱狂のステージを創る——それがMOTOKENの使命。
               </p>
             </RevealUp>
+            <RevealUp delay={0.25}>
+              <p
+                className={`${styles.conceptDescription} ${styles.conceptCurtainRise}`}
+              >
+                AIの冷たさを打ち破り、共に歓びを創り出す最高に熱狂的なショー（舞台）の幕開けである。
+              </p>
+            </RevealUp>
           </div>
           <RevealUp delay={0.15}>
             <div className={styles.conceptCard}>
               <div className={styles.conceptCardInner}>
                 <div className={styles.conceptImageWrap}>
                   <Image
-                    src="/concept-tvhead.png"
-                    alt="テレビ頭のキャラクターが雨の中でギターを弾く、MOTOKENのコンセプトアート"
+                    src="/tvhead-character.png"
+                    alt="テレビ頭のキャラクター — I Don't Need a Heart シリーズより"
                     width={1024}
-                    height={1024}
+                    height={600}
                     className={styles.conceptImage}
                     sizes="(max-width: 768px) 240px, 280px"
                     placeholder="blur"

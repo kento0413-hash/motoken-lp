@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useCallback } from "react";
 import RevealUp from "./RevealUp";
 import styles from "./Contact.module.css";
 
@@ -40,24 +41,47 @@ const socialLinks = [
       </svg>
     ),
   },
-  {
-    href: "https://lit.link/naturemotoken",
-    label: "All Links",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true">
-        <path
-          d="M13.828 10.172a4 4 0 0 0-5.656 0l-4 4a4 4 0 1 0 5.656 5.656l1.102-1.101m-.758-4.899a4 4 0 0 0 5.656 0l4-4a4 4 0 0 0-5.656-5.656l-1.1 1.1"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          fill="none"
-        />
-      </svg>
-    ),
-  },
 ];
 
+type FormStatus = "idle" | "submitting" | "success" | "error";
+
 export default function Contact() {
+  const [status, setStatus] = useState<FormStatus>("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleSubmit = useCallback(async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStatus("submitting");
+    setErrorMessage("");
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const data = {
+      name: formData.get("name") as string,
+      email: formData.get("email") as string,
+      category: formData.get("category") as string,
+      message: formData.get("message") as string,
+    };
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (!res.ok) throw new Error("送信に失敗しました。もう一度お試しください。");
+
+      setStatus("success");
+      form.reset();
+    } catch (err) {
+      setStatus("error");
+      setErrorMessage(
+        err instanceof Error ? err.message : "送信に失敗しました。"
+      );
+    }
+  }, []);
+
   return (
     <section className={styles.contact} id="contact" aria-label="お問い合わせ">
       <div className={styles.container}>
@@ -65,18 +89,18 @@ export default function Contact() {
           <RevealUp className={styles.sectionLabel}>Contact</RevealUp>
           <RevealUp>
             <h2 className={styles.contactTitle}>
-              共に、<em>舞台</em>を
+              共に、<em>熱狂の舞台</em>を
               <br />
               創りませんか。
             </h2>
           </RevealUp>
           <RevealUp delay={0.05}>
             <p className={styles.contactDescription}>
-              共に、誰もが笑顔で夢を語れる舞台を創りませんか。
+              AIという最先端の道具を使い、あなたの思い描くビジョンを、
               <br />
-              新しい価値の共創、エバンジェリスト代行によるビジネス登壇、AI映像制作——
+              誰もが目を奪われる最高のステージへと引き上げます。
               <br />
-              あなたのプロジェクトに、心を動かす火を灯します。
+              共に、熱狂の舞台を創りませんか。
             </p>
           </RevealUp>
           <RevealUp delay={0.1}>
@@ -96,34 +120,142 @@ export default function Contact() {
               ))}
             </div>
           </RevealUp>
-          <RevealUp delay={0.15}>
-            <div className={styles.contactCta}>
-              <a
-                href="https://lit.link/naturemotoken"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-primary btn-large"
-                aria-label="お問い合わせ・ご相談（新しいタブで開く）"
-              >
-                お問い合わせ・ご相談
-                <svg
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  width="16"
-                  height="16"
-                  aria-hidden="true"
+
+          {status === "success" ? (
+            <RevealUp delay={0.15}>
+              <div className={styles.formSuccess}>
+                <div className={styles.formSuccessIcon} aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="32" height="32">
+                    <path d="M20 6L9 17l-5-5" />
+                  </svg>
+                </div>
+                <p className={styles.formSuccessTitle}>送信完了</p>
+                <p className={styles.formSuccessText}>
+                  お問い合わせありがとうございます。<br />
+                  内容を確認の上、折り返しご連絡いたします。
+                </p>
+                <button
+                  type="button"
+                  className={styles.formResetBtn}
+                  onClick={() => setStatus("idle")}
                 >
-                  <path d="M11 3h6v6" />
-                  <path d="M17 3L9 11" />
-                  <path d="M14 11v6H3V6h6" />
-                </svg>
-              </a>
-            </div>
-          </RevealUp>
+                  新しいメッセージを送る
+                </button>
+              </div>
+            </RevealUp>
+          ) : (
+            <RevealUp delay={0.15}>
+              <form
+                className={styles.contactForm}
+                onSubmit={handleSubmit}
+                noValidate
+              >
+                <div className={styles.formRow}>
+                  <div className={styles.formGroup}>
+                    <label htmlFor="contact-name" className={styles.formLabel}>
+                      お名前 <span className={styles.formRequired}>*</span>
+                    </label>
+                    <input
+                      type="text"
+                      id="contact-name"
+                      name="name"
+                      required
+                      className={styles.formField}
+                      placeholder="山田 太郎"
+                      autoComplete="name"
+                    />
+                  </div>
+                  <div className={styles.formGroup}>
+                    <label htmlFor="contact-email" className={styles.formLabel}>
+                      メールアドレス <span className={styles.formRequired}>*</span>
+                    </label>
+                    <input
+                      type="email"
+                      id="contact-email"
+                      name="email"
+                      required
+                      className={styles.formField}
+                      placeholder="your@email.com"
+                      autoComplete="email"
+                    />
+                  </div>
+                </div>
+                <div className={styles.formGroup}>
+                  <label htmlFor="contact-category" className={styles.formLabel}>
+                    ご相談種別
+                  </label>
+                  <div className={styles.selectWrap}>
+                    <select
+                      id="contact-category"
+                      name="category"
+                      className={styles.formField}
+                      defaultValue=""
+                    >
+                      <option value="" disabled>
+                        選択してください
+                      </option>
+                      <option value="ai-video">AI映像制作のご依頼</option>
+                      <option value="evangelist">
+                        エバンジェリストとしての登壇・講演依頼
+                      </option>
+                      <option value="co-creation">
+                        新規事業・共創のご相談
+                      </option>
+                      <option value="other">その他</option>
+                    </select>
+                    <svg
+                      className={styles.selectArrow}
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      width="16"
+                      height="16"
+                      aria-hidden="true"
+                    >
+                      <path d="M6 8l4 4 4-4" />
+                    </svg>
+                  </div>
+                </div>
+                <div className={styles.formGroup}>
+                  <label htmlFor="contact-message" className={styles.formLabel}>
+                    メッセージ <span className={styles.formRequired}>*</span>
+                  </label>
+                  <textarea
+                    id="contact-message"
+                    name="message"
+                    required
+                    rows={5}
+                    className={`${styles.formField} ${styles.formTextarea}`}
+                    placeholder="ご相談内容をお聞かせください"
+                  />
+                </div>
+
+                {status === "error" && (
+                  <p className={styles.formError} role="alert">
+                    {errorMessage}
+                  </p>
+                )}
+
+                <button
+                  type="submit"
+                  className={styles.formSubmit}
+                  disabled={status === "submitting"}
+                >
+                  {status === "submitting" ? (
+                    <>
+                      <span className={styles.submitSpinner} aria-hidden="true" />
+                      送信中…
+                    </>
+                  ) : (
+                    "熱狂の舞台を創る"
+                  )}
+                </button>
+              </form>
+            </RevealUp>
+          )}
         </div>
       </div>
     </section>

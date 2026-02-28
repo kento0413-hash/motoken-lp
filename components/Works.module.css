@@ -90,7 +90,7 @@
 
 /* Card 1: FERROFLUID — Dark base + grid lines + accent glow */
 .workCardBg1 {
-  background: #12121E;
+  background: #0A1410;
 }
 
 .workCardBg1::before {
@@ -98,8 +98,8 @@
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(196, 85, 58, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(196, 85, 58, 0.06) 1px, transparent 1px);
+    linear-gradient(rgba(224, 90, 109, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(224, 90, 109, 0.06) 1px, transparent 1px);
   background-size: 40px 40px;
   mask-image: radial-gradient(ellipse at 50% 50%, black 30%, transparent 75%);
   -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 30%, transparent 75%);
@@ -110,14 +110,14 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at 25% 40%, rgba(196, 85, 58, 0.25) 0%, transparent 55%),
-    radial-gradient(ellipse at 75% 60%, rgba(155, 138, 191, 0.18) 0%, transparent 50%);
+    radial-gradient(ellipse at 25% 40%, rgba(224, 90, 109, 0.25) 0%, transparent 55%),
+    radial-gradient(ellipse at 75% 60%, rgba(138, 191, 160, 0.18) 0%, transparent 50%);
   mix-blend-mode: screen;
 }
 
 /* Card 2: Immersive — Dark base + diagonal scan-lines + amber/sage glow */
 .workCardBg2 {
-  background: #141420;
+  background: #0C1813;
 }
 
 .workCardBg2::before {
@@ -145,14 +145,14 @@
 
 /* Card 3: Surreal — Dark base + dot-matrix + lavender/sage glow */
 .workCardBg3 {
-  background: #131820;
+  background: #0B1510;
 }
 
 .workCardBg3::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle, rgba(155, 138, 191, 0.08) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(138, 191, 160, 0.08) 1px, transparent 1px);
   background-size: 16px 16px;
   mask-image: radial-gradient(ellipse at 50% 50%, black 20%, transparent 70%);
   -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 20%, transparent 70%);
@@ -163,8 +163,8 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at 60% 40%, rgba(155, 138, 191, 0.22) 0%, transparent 55%),
-    radial-gradient(ellipse at 20% 70%, rgba(122, 143, 110, 0.16) 0%, transparent 50%);
+    radial-gradient(ellipse at 60% 40%, rgba(138, 191, 160, 0.22) 0%, transparent 55%),
+    radial-gradient(ellipse at 20% 70%, rgba(91, 138, 114, 0.16) 0%, transparent 50%);
   mix-blend-mode: screen;
 }
 
@@ -173,7 +173,7 @@
   z-index: 1;
   padding: clamp(24px, 3vw, 40px);
   padding-top: clamp(40px, 5vw, 60px);
-  background: linear-gradient(to top, rgba(10, 10, 20, 0.85) 0%, rgba(10, 10, 20, 0.4) 60%, transparent 100%);
+  background: linear-gradient(to top, rgba(10, 20, 16, 0.9) 0%, rgba(10, 20, 16, 0.4) 60%, transparent 100%);
   width: 100%;
   color: #fff;
 }

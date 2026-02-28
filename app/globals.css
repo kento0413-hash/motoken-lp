@@ -12,29 +12,29 @@
 }
 
 :root {
-  --bg: #FAF9F6;
-  --bg-warm: #F5F0EB;
-  --bg-card: #FFFFFF;
-  --text: #1A1A2E;
-  --text-secondary: #5A5A72;
-  --text-muted: #8E8E9F;
-  --accent: #C4553A;
-  --accent-soft: #E8634A;
-  --accent-light: rgba(196, 85, 58, 0.08);
-  --sage: #7A8F6E;
-  --sage-light: rgba(122, 143, 110, 0.08);
-  --lavender: #9B8ABF;
-  --lavender-light: rgba(155, 138, 191, 0.06);
+  --bg: #0F1A17;
+  --bg-warm: #152420;
+  --bg-card: #1A2F28;
+  --text: #E8E2D8;
+  --text-secondary: #9EA89A;
+  --text-muted: #5E6E66;
+  --accent: #E05A6D;
+  --accent-soft: #D04C5E;
+  --accent-light: rgba(224, 90, 109, 0.10);
+  --sage: #5B8A72;
+  --sage-light: rgba(91, 138, 114, 0.10);
+  --lavender: #8ABFA0;
+  --lavender-light: rgba(138, 191, 160, 0.08);
   --amber: #D4922A;
-  --amber-light: rgba(212, 146, 42, 0.10);
-  --warm-glow: rgba(212, 146, 42, 0.06);
+  --amber-light: rgba(212, 146, 42, 0.12);
+  --warm-glow: rgba(91, 138, 114, 0.08);
   --scroll-warmth: 0;
-  --border: rgba(26, 26, 46, 0.08);
-  --border-strong: rgba(26, 26, 46, 0.15);
-  --shadow-sm: 0 1px 3px rgba(26, 26, 46, 0.04);
-  --shadow-md: 0 4px 20px rgba(26, 26, 46, 0.06);
-  --shadow-lg: 0 12px 40px rgba(26, 26, 46, 0.08);
-  --shadow-xl: 0 20px 60px rgba(26, 26, 46, 0.1);
+  --border: rgba(138, 191, 160, 0.10);
+  --border-strong: rgba(138, 191, 160, 0.18);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.35);
+  --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.4);
   --radius-sm: 8px;
   --radius-md: 16px;
   --radius-lg: 24px;
@@ -67,19 +67,19 @@ body {
   min-width: 320px;
 }
 
-/* Color Script: warm tint overlay that increases with scroll progress */
+/* Color Script: cherry-blossom tint overlay that increases with scroll progress */
 body::after {
   content: '';
   position: fixed;
   inset: 0;
-  background: linear-gradient(180deg, transparent 0%, rgba(212, 146, 42, 0.03) 40%, rgba(212, 146, 42, 0.07) 100%);
+  background: linear-gradient(180deg, transparent 0%, rgba(224, 90, 109, 0.02) 40%, rgba(224, 90, 109, 0.05) 100%);
   opacity: var(--scroll-warmth);
   pointer-events: none;
   z-index: 0;
 }
 
 ::selection {
-  background: rgba(196, 85, 58, 0.15);
+  background: rgba(224, 90, 109, 0.25);
   color: var(--text);
 }
 
