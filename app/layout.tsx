@@ -1,28 +1,28 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Noto_Sans_JP, Playfair_Display } from "next/font/google";
+import { Space_Grotesk, Zen_Kaku_Gothic_New, Cormorant_Garamond } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
-const inter = Inter({
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-inter",
+  variable: "--font-space",
   display: "swap",
 });
 
-const notoSansJP = Noto_Sans_JP({
+const zenKaku = Zen_Kaku_Gothic_New({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-noto",
+  weight: ["300", "400", "500", "700"],
+  variable: "--font-zen",
   display: "swap",
 });
 
-const playfairDisplay = Playfair_Display({
+const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["400", "600"],
   style: ["italic"],
-  variable: "--font-playfair",
+  variable: "--font-cormorant",
   display: "swap",
 });
 
@@ -103,7 +103,7 @@ export default function RootLayout({
   return (
     <html
       lang="ja"
-      className={`${inter.variable} ${notoSansJP.variable} ${playfairDisplay.variable}`}
+      className={`${spaceGrotesk.variable} ${zenKaku.variable} ${cormorant.variable}`}
     >
       <body>
         <script

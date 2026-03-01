@@ -1,35 +1,20 @@
 "use client";
 
+import Image from "next/image";
 import RevealUp from "./RevealUp";
 import styles from "./Profile.module.css";
-
-const skills = [
-  "AI Video / Animation",
-  "AI Illustration",
-  "AI Music",
-  "AI Direction",
-  "AI Production",
-  "Virtual Humans",
-  "AI Comics / Manga",
-  "Business Strategy",
-  "New Business Dev",
-];
 
 const tools = [
   "Runway",
   "Midjourney",
   "Sora",
-  "CapCut",
+  "PowerDirector",
   "Suno AI",
   "ChatGPT",
   "Claude",
   "Gemini",
-];
-
-const career = [
-  { period: "2013 —", desc: "AI・デジタル新規事業（上場企業）" },
-  { period: "", desc: "Walt Disney World キャスト" },
-  { period: "2025.12 —", desc: "AIアーティスト「MOTOKEN」始動" },
+  "KlingAI",
+  "Obsidian",
 ];
 
 export default function Profile() {
@@ -44,34 +29,30 @@ export default function Profile() {
         </RevealUp>
         <div className={styles.profileGrid}>
           <RevealUp delay={0.1} className={styles.profileMain}>
-            <div className={styles.profileAvatar} aria-hidden="true">
-              <div className={styles.avatarScreen}>
-                <span className={styles.avatarInitial}>M</span>
-              </div>
+            <div className={styles.profileAvatar}>
+              <Image
+                src="/profile-avatar.png"
+                alt="MOTOKEN — TV Head キャラクター"
+                width={800}
+                height={800}
+                className={styles.avatarImage}
+                sizes="(max-width: 768px) 160px, 200px"
+              />
             </div>
             <div className={styles.profileBio}>
               <p>
                 10年以上にわたりAI・デジタル領域の新規事業に従事し、現場起点で事業化を推進してきた実践者。
               </p>
               <p>
-                2025年12月より「MOTOKEN」として没入映像やMVを手掛けるAIアーティストとして本格始動。
-                AI事業を推進しながら、感情を持ったAIと画面越しの現代社会を映像で描き出す。
+                2025年12月より「MOTOKEN」として本格始動。没入映像やMV制作といったAIアーティスト活動に加え、自身の経験値と世界中の論文やベストプラクティスを組み合わせたブログの執筆活動をnoteとXで開始。
               </p>
               <p>
-                Walt Disney World
-                での勤務経験、お笑い芸人としての活動を経て、
-                ストーリーテリングとグローバルな感性を武器に、ビジネスとクリエイティブの両面から価値を創出する。
+                最近はマルチエージェントによるAIシステム開発に熱中。
               </p>
-            </div>
-            <div className={styles.profileSkills}>
-              <h3 className={styles.profileSkillsTitle}>Expertise</h3>
-              <div className={styles.skillTags}>
-                {skills.map((skill) => (
-                  <span key={skill} className={styles.skillTag}>
-                    {skill}
-                  </span>
-                ))}
-              </div>
+              <p>
+                Walt Disney World での勤務経験、お笑い芸人としての活動——回り道に見えたすべてが、今の武器になっている。
+                ストーリーテリングとグローバルな感性で、ビジネスとクリエイティブの両面から価値を創出する。
+              </p>
             </div>
           </RevealUp>
           <RevealUp delay={0.2} className={styles.profileSide}>
@@ -80,19 +61,6 @@ export default function Profile() {
               <ul className={styles.profileTools}>
                 {tools.map((tool) => (
                   <li key={tool}>{tool}</li>
-                ))}
-              </ul>
-            </div>
-            <div className={styles.profileInfoCard}>
-              <h3 className={styles.profileInfoTitle}>Background</h3>
-              <ul className={styles.profileCareer}>
-                {career.map((item, i) => (
-                  <li key={i}>
-                    {item.period && (
-                      <span className={styles.careerPeriod}>{item.period}</span>
-                    )}
-                    <span className={styles.careerDesc}>{item.desc}</span>
-                  </li>
                 ))}
               </ul>
             </div>

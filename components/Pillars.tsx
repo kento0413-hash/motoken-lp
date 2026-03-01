@@ -44,12 +44,12 @@ const pillars = [
       </svg>
     ),
     title: "The Execution",
-    subtitle: "300+のAI案件を推進した実行力",
+    subtitle: "300+のAI案件を動かした、泥臭い推進力",
     colorClass: "pillarAccent",
     bullets: [
-      "10年以上にわたるAI特化の新規事業立ち上げ",
-      "「まずつくる」── Small Win × Quick Win",
-      "1人の100歩より、100人の1歩を動かす",
+      "裏方に回り、あなたを勝たせる——上場企業での10年で培った圧倒的な事業推進力を、あなたのプロジェクトに",
+      "難解なテクノロジーを「熱狂のストーリー」へ翻訳する——あなたのビジョンを最前線で代弁し、ステークホルダーを巻き込むエバンジェリスト代行",
+      "最速で生み出す、最初の\u201C熱量\u201D——立ち止まらないSmall Win × Quick Winで、プロジェクトに熱狂の火を点け続ける",
     ],
   },
   {
@@ -81,12 +81,12 @@ const pillars = [
       </svg>
     ),
     title: "The Expression",
-    subtitle: "観る人の心を掴む映像体験",
+    subtitle: "テクノロジーを、誰もが夢を見るステージへ",
     colorClass: "pillarAmber",
     bullets: [
-      "最先端AI技術を、誰もが夢を見られるステージへ変換",
-      "クリエイティブとビジネス成果を両立する表現設計",
-      "AI Art開始2ヶ月で15,000+フォロワーの没入映像",
+      "AI × 感性の共鳴——最先端技術を無機質なまま終わらせず、心を掴む体験へと変換",
+      "映像・記事・音楽の越境——ひとつのビジョンを、最も突き刺さる形であらゆる場所へ届ける",
+      "止まらない没入体験——一度触れたら抜け出せない。無機質なAIに命を吹き込み、予定調和を壊す圧倒的な表現力",
     ],
   },
   {
@@ -123,12 +123,12 @@ const pillars = [
       </svg>
     ),
     title: "The Evangelist",
-    subtitle: "好奇心と共創で、ビジョンを広める",
+    subtitle: "周囲を巻き込み、ビジョンを拡張する",
     colorClass: "pillarSage",
     bullets: [
-      "元お笑い芸人 → 人を惹きつけるストーリーテリング",
-      "元Walt Disney Worldキャスト → グローバルで多様な視座",
-      "あなたのエバンジェリストとして、ビジョンを世界に届ける",
+      "元お笑い芸人 × AI事業責任者——舞台で鍛え上げた、人を惹きつけるストーリーテリングとプレゼンテーション",
+      "元Disney Worldキャスト——世界中の多様な視座を掛け合わせ、グローバルな共感を生み出すコミュニケーション",
+      "現場の実践知 × 科学的アプローチ——泥臭い経験値に、世界中の研究論文やベストプラクティスを掛け合わせる。経験則だけで終わらせない、確固たる「再現性」を持った発信",
     ],
   },
 ];
@@ -140,12 +140,14 @@ export default function Pillars() {
         <RevealUp className={styles.sectionLabel}>About</RevealUp>
         <RevealUp>
           <h2 className={styles.sectionTitle}>
-            3つの火で、<em>舞台を灯す。</em>
+            あなたを主役にする、<em>3つの炎。</em>
           </h2>
         </RevealUp>
         <RevealUp delay={0.05}>
           <p className={styles.sectionSubtitle}>
-            実行力・表現力・伝播力——この3つが交差するとき、プロジェクトに火が灯る。
+            泥臭い実行力、心を震わせる表現力、周囲を巻き込む伝播力。
+            <br />
+            この3つが交差する時、あなたのプロジェクトは「最高のショー」として幕を開ける。
           </p>
         </RevealUp>
         <div className={styles.pillarsGrid}>

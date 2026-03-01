@@ -12,15 +12,31 @@ interface StatItem {
 }
 
 const stats: StatItem[] = [
-  { target: 12, unit: "+ Years", label: "AI事業推進" },
   {
     target: 15000,
     unit: "+",
     label: "Followers SNS",
-    sublabel: "（AI Art開始2ヶ月）",
+    sublabel: "（AI Art開始わずか60日）",
   },
-  { target: 20, unit: " /年", label: "登壇（年平均）" },
-  { target: 100, unit: "+", label: "AI Video Art" },
+  {
+    target: 300,
+    unit: "+",
+    label: "AI Projects",
+    sublabel: "（案件 推進実績）",
+  },
+  {
+    target: 20,
+    unit: " /年",
+    label: "登壇（年平均）",
+    sublabel: "（延べ2,000名以上に）",
+  },
+  {
+    target: 100,
+    unit: "+",
+    label: "AI Creative Works",
+    sublabel: "（映像・アート・記事）",
+  },
+  { target: 12, unit: "+ Years", label: "AI一筋" },
 ];
 
 function animateCounter(el: HTMLElement, target: number) {

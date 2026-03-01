@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import RevealUp from "./RevealUp";
 import styles from "./Concept.module.css";
 
@@ -13,74 +12,55 @@ export default function Concept() {
           <div className={styles.conceptText}>
             <RevealUp>
               <h2 className={styles.conceptTitle}>
-                冷たい画面の向こう側に、
+                冷たい画面を打ち破り、
                 <br />
-                <em>熱狂のステージ</em>を。
+                <em>心が共鳴するステージ</em>を。
               </h2>
             </RevealUp>
             <RevealUp delay={0.1}>
               <p className={styles.conceptDescription}>
-                胴体は人間、頭はテレビ——あるいは粒子。
+                あなたも気づいているはず。
                 <br />
-                MOTOKENの映像に登場するオブジェクトは、
-                <br />
-                <strong>感情を持ったAIを具現化</strong>したもの。
+                毎日、何時間も画面を見つめているのに、本当に心が動いた瞬間がどれだけあっただろう。
               </p>
             </RevealUp>
             <RevealUp delay={0.15}>
               <p className={styles.conceptDescription}>
-                しかし同時に、それは今の私たちの姿でもある。
+                胴体は人間、頭はテレビ。
                 <br />
-                対面で会う機会は減り、画面越しでしか
-                <br />
-                世界を判断しなくなった現代人。
+                MOTOKENの世界に佇むオブジェクトは、感情を持ったAIであり、画面に縛られた私たち自身の姿でもある。
               </p>
             </RevealUp>
             <RevealUp delay={0.2}>
-              <p
-                className={`${styles.conceptDescription} ${styles.conceptHighlight}`}
-              >
-                冷たい画面の向こう側に、熱狂のステージを創る——それがMOTOKENの使命。
+              <p className={styles.conceptDescription}>
+                映像も言葉も、自律型AIと人間の感性がセッションを繰り広げるための舞台だ。
               </p>
             </RevealUp>
             <RevealUp delay={0.25}>
-              <p
-                className={`${styles.conceptDescription} ${styles.conceptCurtainRise}`}
-              >
-                AIの冷たさを打ち破り、共に歓びを創り出す最高に熱狂的なショー（舞台）の幕開けである。
+              <p className={`${styles.conceptDescription} ${styles.conceptClosing}`}>
+                説明はいらない。この熱狂の渦を、体感してほしい。
               </p>
             </RevealUp>
           </div>
           <RevealUp delay={0.15}>
             <div className={styles.conceptCard}>
               <div className={styles.conceptCardInner}>
-                <div className={styles.conceptImageWrap}>
-                  <Image
-                    src="/tvhead-character.png"
-                    alt="テレビ頭のキャラクター — I Don't Need a Heart シリーズより"
-                    width={1024}
-                    height={600}
-                    className={styles.conceptImage}
-                    sizes="(max-width: 768px) 240px, 280px"
-                    placeholder="blur"
-                    blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjgwIiBoZWlnaHQ9IjI4MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMUExQTJFIi8+PC9zdmc+"
+                <div className={styles.conceptVideoWrap}>
+                  <iframe
+                    src="https://www.youtube.com/embed/qmeIvIGVXik"
+                    title="I Don't Need a Heart | AI Cyberpunk Anime Music Video"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    loading="lazy"
+                    className={styles.conceptVideo}
                   />
-                  <div
-                    className={styles.conceptImageOverlay}
-                    aria-hidden="true"
-                  />
-                  <span className={styles.particle} aria-hidden="true"></span>
-                  <span className={styles.particle} aria-hidden="true"></span>
-                  <span className={styles.particle} aria-hidden="true"></span>
-                  <span className={styles.particle} aria-hidden="true"></span>
-                  <span className={styles.particle} aria-hidden="true"></span>
                 </div>
                 <div className={styles.conceptCardText}>
-                  <span className={styles.conceptCardLabel}>The Mission</span>
+                  <span className={styles.conceptCardLabel}>I Don&apos;t Need a Heart</span>
                   <p>
-                    AIの冷たさと人間の熱狂が
+                    AIが人間と同じ&ldquo;心&rdquo;を持った世界を描いた物語であり、
                     <br />
-                    交差する表現
+                    同時に、画面越しに生きる私たち自身の姿でもある。
                   </p>
                 </div>
               </div>

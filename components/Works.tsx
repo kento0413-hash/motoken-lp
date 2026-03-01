@@ -5,49 +5,65 @@ import styles from "./Works.module.css";
 
 const works = [
   {
-    href: "https://www.youtube.com/@naturemotoken",
-    tag: "MV",
+    href: "https://youtu.be/qmeIvIGVXik",
+    tag: "MV \u2014 AI Cyberpunk Anime",
     title: (
       <>
-        FERROFLUID
+        I Don&apos;t Need a Heart
         <br />
-        Industrial Glitch MV
+        AI Cyberpunk Anime MV
       </>
     ),
-    desc: "Runway Gen-4 × PowerDirectorで制作した没入型ミュージックビデオ",
+    desc: "AIが人間と同じ\u201C心\u201Dを持った世界を描いた物語であり、同時に、画面越しに生きる私たち自身の姿でもある。",
     link: "Watch on YouTube \u2192",
     bgClass: "workCardBg1" as const,
     large: true,
   },
   {
-    href: "https://www.tiktok.com/@naturemotoken",
-    tag: "Short Film",
+    href: "https://youtu.be/Crf-Vkduikk",
+    tag: "MV \u2014 AI Seasons",
     title: (
       <>
-        Immersive
+        SHIKI:
         <br />
-        AI Videos
+        Ephemeral Glitch
       </>
     ),
-    desc: "TikTokで15,000+フォロワーを獲得した没入映像シリーズ",
-    link: "View on TikTok \u2192",
+    desc: "A visual exploration of seasons that no longer cycle, but only glitch.",
+    link: "Watch on YouTube \u2192",
     bgClass: "workCardBg2" as const,
     large: false,
   },
   {
-    href: "https://www.instagram.com/naturemotoken",
-    tag: "Visual Art",
+    href: "https://www.instagram.com/motoken_japanese_nature/",
+    tag: "Short Film",
     title: (
       <>
-        Surreal
+        15秒のShort Filmは
         <br />
-        AI Portraits
+        SNSで毎日新作投稿
       </>
     ),
-    desc: "テレビヘッド・粒子体——AIの感情を視覚化したビジュアルアート",
+    desc: "15\u79d2\u306eTV Head \u00d7 \u4e16\u754c\u306e\u81ea\u7136 \u00d7 \u591a\u69d8\u306a\u697d\u5668\u6f14\u594f",
     link: "View on Instagram \u2192",
     bgClass: "workCardBg3" as const,
     large: false,
+    video: "/work-shortfilm.mp4",
+  },
+  {
+    href: "https://note.com/naturemotoken",
+    tag: "Frontline Insights",
+    title: (
+      <>
+        The Edge of
+        <br />
+        Technology
+      </>
+    ),
+    desc: "最前線で戦う現場のリアルな実践知と、世界中の「最先端論文とベストプラクティス」を掛け合わせる。経験則や単なるトレンド解説では終わらない、確かな科学的裏付けと洞察を盛り込んだ思考録。",
+    link: "Read on note.com \u2192",
+    bgClass: "workCardBg4" as const,
+    large: true,
   },
 ];
 
@@ -63,7 +79,7 @@ export default function Works() {
         </RevealUp>
         <RevealUp delay={0.05}>
           <p className={styles.sectionSubtitle}>
-            没入映像・MV・AIビジュアルアート。テクノロジーと感情が交差する作品群。
+            映像・アート・自律型AI——テクノロジーと感情が交差する作品群。
           </p>
         </RevealUp>
         <div className={styles.worksGrid}>
@@ -82,10 +98,22 @@ export default function Works() {
                 className={styles.workCardLink}
                 aria-label={`${work.tag}: ${work.desc}（新しいタブで開く）`}
               >
-                <div
-                  className={`${styles.workCardBg} ${styles[work.bgClass]}`}
-                  aria-hidden="true"
-                />
+                {"video" in work && work.video ? (
+                  <video
+                    className={`${styles.workCardBg} ${styles.workCardVideo}`}
+                    src={work.video}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    aria-hidden="true"
+                  />
+                ) : (
+                  <div
+                    className={`${styles.workCardBg} ${styles[work.bgClass]}`}
+                    aria-hidden="true"
+                  />
+                )}
                 <div className={styles.workCardContent}>
                   <span className={styles.workCardTag}>{work.tag}</span>
                   <h3 className={styles.workCardTitle}>{work.title}</h3>

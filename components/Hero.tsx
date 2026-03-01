@@ -74,7 +74,7 @@ export default function Hero() {
       </div>
       <div className={styles.heroContent}>
         <RevealUp>
-          <p className={styles.heroTag}>AI Artist / AI Business</p>
+          <p className={styles.heroTag}>AI Artist / Agentic AI / AI Business</p>
         </RevealUp>
         <h1 className={styles.heroTitle}>
           <RevealUp as="span" delay={0.1} className={styles.heroTitleLine}>
@@ -85,9 +85,18 @@ export default function Hero() {
             delay={0.2}
             className={`${styles.heroTitleLine} ${styles.heroTitleAccent}`}
           >
-            画面の向こうに<em>&ldquo;熱狂&rdquo;</em>を創る
+            テクノロジーに体温を宿し、
+            <br />
+            誰もが主役になる<em>&ldquo;最高のショー&rdquo;</em>を。
           </RevealUp>
         </h1>
+        <RevealUp delay={0.3}>
+          <p className={styles.heroSublead}>
+            元お笑い芸人。Disney Worldのキャスト。上場企業でAI事業12年。
+            <br />
+            ——この男が今、AIで&ldquo;熱狂&rdquo;を創る理由。
+          </p>
+        </RevealUp>
         <RevealUp delay={0.45}>
           <div className={styles.heroActions}>
             <a
@@ -95,7 +104,7 @@ export default function Hero() {
               className="btn btn-primary"
               onClick={(e) => handleClick(e, "#works")}
             >
-              View Works
+              作品を体験する
               <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="16" height="16" aria-hidden="true">
                 <path d="M10 4v12M4 10l6 6 6-6" />
               </svg>
@@ -105,7 +114,7 @@ export default function Hero() {
               className="btn btn-outline"
               onClick={(e) => handleClick(e, "#contact")}
             >
-              Get in Touch
+              一緒につくる
             </a>
           </div>
         </RevealUp>

@@ -59,6 +59,30 @@
   box-shadow: 0 0 8px rgba(91, 138, 114, 0.5);
 }
 
+.navSocial {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+  margin-right: clamp(16px, 2vw, 28px);
+}
+
+.navSocialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: var(--text-secondary);
+  transition: color 0.3s, background 0.3s;
+}
+
+.navSocialLink:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.08);
+}
+
 .navToggle {
   display: none;
   flex-direction: column;
@@ -157,6 +181,21 @@
 }
 
 @media (max-width: 768px) {
+  .navSocial {
+    margin-right: 8px;
+    gap: 2px;
+  }
+
+  .navSocialLink {
+    width: 28px;
+    height: 28px;
+  }
+
+  .navSocialLink svg {
+    width: 14px;
+    height: 14px;
+  }
+
   .navToggle {
     display: flex;
   }

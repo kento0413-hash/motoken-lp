@@ -39,8 +39,8 @@
   --radius-md: 16px;
   --radius-lg: 24px;
   --radius-xl: 32px;
-  --font-sans: 'Inter', 'Noto Sans JP', -apple-system, sans-serif;
-  --font-serif: 'Playfair Display', 'Georgia', serif;
+  --font-sans: 'Space Grotesk', 'Zen Kaku Gothic New', -apple-system, sans-serif;
+  --font-serif: 'Cormorant Garamond', 'Georgia', serif;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -185,8 +185,14 @@ strong {
 /* --- Section Dividers --- */
 .sectionDivider {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   padding: 8px 0;
+  gap: 16px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  font-weight: 400;
 }
 
 .sectionDivider::before {

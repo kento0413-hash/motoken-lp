@@ -88,84 +88,30 @@
   transform: scale(1.05);
 }
 
-/* Card 1: FERROFLUID — Dark base + grid lines + accent glow */
+.workCardVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Card 1: I Don't Need a Heart — Thumbnail background */
 .workCardBg1 {
-  background: #0A1410;
+  background: #0A1410 url('/work-idnah.png') center / cover no-repeat;
 }
 
-.workCardBg1::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(224, 90, 109, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(224, 90, 109, 0.06) 1px, transparent 1px);
-  background-size: 40px 40px;
-  mask-image: radial-gradient(ellipse at 50% 50%, black 30%, transparent 75%);
-  -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 30%, transparent 75%);
-}
-
-.workCardBg1::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse at 25% 40%, rgba(224, 90, 109, 0.25) 0%, transparent 55%),
-    radial-gradient(ellipse at 75% 60%, rgba(138, 191, 160, 0.18) 0%, transparent 50%);
-  mix-blend-mode: screen;
-}
-
-/* Card 2: Immersive — Dark base + diagonal scan-lines + amber/sage glow */
+/* Card 2: SHIKI — Thumbnail background */
 .workCardBg2 {
-  background: #0C1813;
+  background: #0C1813 url('/work-shiki.png') center / cover no-repeat;
 }
 
-.workCardBg2::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(
-    -45deg,
-    transparent,
-    transparent 4px,
-    rgba(212, 146, 42, 0.04) 4px,
-    rgba(212, 146, 42, 0.04) 5px
-  );
-}
-
-.workCardBg2::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse at 30% 50%, rgba(212, 146, 42, 0.22) 0%, transparent 55%),
-    radial-gradient(ellipse at 80% 30%, rgba(122, 143, 110, 0.18) 0%, transparent 50%);
-  mix-blend-mode: screen;
-}
-
-/* Card 3: Surreal — Dark base + dot-matrix + lavender/sage glow */
+/* Card 3: Short Film — video background (styles via .workCardVideo) */
 .workCardBg3 {
   background: #0B1510;
 }
 
-.workCardBg3::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(circle, rgba(138, 191, 160, 0.08) 1px, transparent 1px);
-  background-size: 16px 16px;
-  mask-image: radial-gradient(ellipse at 50% 50%, black 20%, transparent 70%);
-  -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 20%, transparent 70%);
-}
-
-.workCardBg3::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse at 60% 40%, rgba(138, 191, 160, 0.22) 0%, transparent 55%),
-    radial-gradient(ellipse at 20% 70%, rgba(91, 138, 114, 0.16) 0%, transparent 50%);
-  mix-blend-mode: screen;
+/* Card 4: Frontline Insights — Thumbnail background */
+.workCardBg4 {
+  background: #0D1612 url('/work-articles.png') center / cover no-repeat;
 }
 
 .workCardContent {

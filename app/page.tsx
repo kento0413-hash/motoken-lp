@@ -20,11 +20,18 @@ export default function Home() {
       <main id="main">
         <Hero />
         <Concept />
-        <div className="sectionDivider" aria-hidden="true" />
+        <div className="sectionDivider" aria-hidden="true">
+          では、どうやって？
+        </div>
         <Pillars />
         <Stats />
-        <div className="sectionDivider" aria-hidden="true" />
+        <div className="sectionDivider" aria-hidden="true">
+          その結果が、これだ。
+        </div>
         <Works />
+        <div className="sectionDivider" aria-hidden="true">
+          誰がつくっているのか。
+        </div>
         <Profile />
         <Contact />
       </main>
