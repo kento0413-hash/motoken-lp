@@ -36,26 +36,27 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "MOTOKEN | AI Artist — 冷たい画面の向こうに、熱狂を。",
+  title: "MOTOKEN | 誰もが主役になる\u201C最高のショー\u201Dを。",
   description:
-    "MOTOKEN — AI Artist / AI Business。冷たい画面の向こう側に、熱狂のステージを創る。没入映像・MV制作・AIビジネス登壇。12年以上のAI事業推進経験。",
+    "元お笑い芸人。Disney Worldのキャスト。上場企業でAI事業12年。——この男が今、AIで\u201C熱狂\u201Dを創る理由。AI映像・MV制作・エバンジェリスト登壇。",
   keywords: [
     "MOTOKEN",
     "AI Artist",
     "AI映像",
-    "没入映像",
     "AIアーティスト",
     "AI Video Art",
     "AI Business",
     "MV制作",
     "エバンジェリスト",
+    "Disney",
+    "お笑い芸人",
   ],
   authors: [{ name: "MOTOKEN" }],
   creator: "MOTOKEN",
   openGraph: {
-    title: "MOTOKEN | AI Artist — 冷たい画面の向こうに、熱狂を。",
+    title: "MOTOKEN | 誰もが主役になる\u201C最高のショー\u201Dを。",
     description:
-      "冷たい画面の向こう側に、熱狂のステージを創る。没入映像・MV制作・AIビジネス登壇。",
+      "元お笑い芸人。Disney Worldのキャスト。上場企業でAI事業12年。——この男が今、AIで\u201C熱狂\u201Dを創る理由。",
     url: siteUrl,
     siteName: "MOTOKEN",
     locale: "ja_JP",
@@ -63,8 +64,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "MOTOKEN | AI Artist",
-    description: "冷たい画面の向こう側に、熱狂のステージを創る。",
+    title: "MOTOKEN | 誰もが主役になる\u201C最高のショー\u201Dを。",
+    description:
+      "元お笑い芸人。Disney Worldのキャスト。上場企業でAI事業12年。——この男が今、AIで\u201C熱狂\u201Dを創る理由。",
     creator: "@naturemotoken",
   },
   alternates: {
@@ -79,7 +81,7 @@ const jsonLd = {
   url: siteUrl,
   jobTitle: "AI Artist / AI Business",
   description:
-    "冷たい画面の向こう側に、熱狂のステージを創る。AI×創作×事業を融合するAIアーティスト。",
+    "元お笑い芸人→Disney World→AI事業12年。テクノロジーに体温を宿し、誰もが主役になる最高のショーを創る。",
   sameAs: [
     "https://www.youtube.com/@naturemotoken",
     "https://www.tiktok.com/@naturemotoken",

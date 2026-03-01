@@ -1,6 +1,7 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "MOTOKEN | AI Artist";
+export const alt =
+  "MOTOKEN | 誰もが主役になる\u201C最高のショー\u201Dを。";
 
 export const size = {
   width: 1200,
@@ -20,30 +21,32 @@ export default async function Image() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          background: "linear-gradient(135deg, #FAF9F6 0%, #F5EDE3 50%, #F0E4D6 100%)",
+          background: "linear-gradient(145deg, #0A1A14 0%, #0F2620 40%, #132E26 100%)",
           position: "relative",
         }}
       >
         <div
           style={{
             position: "absolute",
-            top: "-60px",
-            right: "-40px",
-            width: "400px",
-            height: "400px",
+            top: "-100px",
+            right: "-60px",
+            width: "500px",
+            height: "500px",
             borderRadius: "50%",
-            background: "radial-gradient(circle, rgba(196, 85, 58, 0.12), transparent 70%)",
+            background:
+              "radial-gradient(circle, rgba(91,138,114,0.2), transparent 70%)",
           }}
         />
         <div
           style={{
             position: "absolute",
-            bottom: "-40px",
-            left: "-40px",
-            width: "300px",
-            height: "300px",
+            bottom: "-80px",
+            left: "-60px",
+            width: "400px",
+            height: "400px",
             borderRadius: "50%",
-            background: "radial-gradient(circle, rgba(212, 146, 42, 0.1), transparent 70%)",
+            background:
+              "radial-gradient(circle, rgba(212,146,42,0.12), transparent 70%)",
           }}
         />
         <div
@@ -51,50 +54,64 @@ export default async function Image() {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            gap: "24px",
+            gap: "20px",
             position: "relative",
+            padding: "0 60px",
           }}
         >
           <div
             style={{
-              fontSize: "24px",
+              fontSize: "22px",
               fontWeight: 700,
-              letterSpacing: "0.2em",
-              color: "#1A1A2E",
+              letterSpacing: "0.25em",
+              color: "rgba(255,255,255,0.5)",
             }}
           >
             MOTOKEN
           </div>
           <div
             style={{
-              fontSize: "56px",
-              fontWeight: 700,
-              color: "#1A1A2E",
-              lineHeight: 1.2,
-              textAlign: "center",
+              fontSize: "28px",
+              fontWeight: 400,
+              color: "rgba(255,255,255,0.7)",
+              letterSpacing: "0.05em",
             }}
           >
-            Where AI Meets
+            AI × 感性の共鳴——
           </div>
           <div
             style={{
-              fontSize: "60px",
-              fontWeight: 400,
+              fontSize: "48px",
+              fontWeight: 700,
+              color: "#FFFFFF",
+              lineHeight: 1.3,
+              textAlign: "center",
+              maxWidth: "900px",
+            }}
+          >
+            誰もが主役になる
+          </div>
+          <div
+            style={{
+              fontSize: "52px",
+              fontWeight: 700,
+              color: "#5B8A72",
               fontStyle: "italic",
-              color: "#C4553A",
               fontFamily: "Georgia, serif",
             }}
           >
-            Human Emotion
+            &ldquo;最高のショー&rdquo;を。
           </div>
           <div
             style={{
-              fontSize: "18px",
-              color: "#5A5A72",
-              marginTop: "16px",
+              fontSize: "17px",
+              color: "rgba(255,255,255,0.55)",
+              marginTop: "12px",
+              textAlign: "center",
+              lineHeight: 1.6,
             }}
           >
-            冷たい画面の向こう側に、熱狂のステージを創る。
+            元お笑い芸人。Disney Worldのキャスト。上場企業でAI事業12年。
           </div>
         </div>
         <div
@@ -104,7 +121,7 @@ export default async function Image() {
             left: "0",
             right: "0",
             height: "4px",
-            background: "linear-gradient(90deg, #C4553A, #D4922A, #7A8F6E)",
+            background: "linear-gradient(90deg, #5B8A72, #D4922A, #5B8A72)",
           }}
         />
       </div>
