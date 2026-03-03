@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://motoken.studio/sitemap.xml",
+    sitemap: "https://motoken-studio.com/sitemap.xml",
   };
 }

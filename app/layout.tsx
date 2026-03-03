@@ -26,7 +26,7 @@ const cormorant = Cormorant_Garamond({
   display: "swap",
 });
 
-const siteUrl = "https://motoken.studio";
+const siteUrl = "https://motoken-studio.com";
 
 export const viewport: Viewport = {
   width: "device-width",
